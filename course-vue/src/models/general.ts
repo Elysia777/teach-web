@@ -84,6 +84,15 @@ export interface UserInfo {
   roles: string
   password: string
 }
+export interface UserInfoRes {
+  loggedIn: boolean
+  username: string
+  perName: string
+  accessToken: string
+  id: number
+  roles: string
+  password: string
+}
 //用于Chart数据信息的定义
 export interface ChartItem {
   value: string[]
