@@ -1,0 +1,146 @@
+2024-11-06 18:49:57,896 [background-preinit] INFO  o.h.validator.internal.util.Version                - HV000001: Hibernate Validator 6.2.0.Final
+2024-11-06 18:49:57,909 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - Starting SpringBootSecurityJwtApplication using Java 17.0.8 on LAPTOP-93H8MNO6 with PID 5872 (C:\Users\28425\Downloads\teach-web\java-server\target\classes started by 28425 in C:\Users\28425\Downloads\teach-web\java-server)
+2024-11-06 18:49:57,910 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - No active profile set, falling back to default profiles: default
+2024-11-06 18:49:58,884 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-11-06 18:49:58,886 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-06 18:49:59,226 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 320 ms. Found 20 JPA repository interfaces.
+2024-11-06 18:49:59,858 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@43a09ce2' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-06 18:49:59,862 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-11-06 18:50:00,449 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 9090 (http)
+2024-11-06 18:50:00,479 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-06 18:50:00,481 [main] INFO  org.apache.catalina.core.StandardService           - Starting service [Tomcat]
+2024-11-06 18:50:00,482 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-11-06 18:50:00,707 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring embedded WebApplicationContext
+2024-11-06 18:50:00,707 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 2738 ms
+2024-11-06 18:50:00,797 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-06 18:50:00,828 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Starting...
+2024-11-06 18:50:00,998 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Start completed.
+2024-11-06 18:50:01,071 [main] INFO  o.hibernate.jpa.internal.util.LogHelper            - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-06 18:50:01,214 [main] INFO  org.hibernate.Version                              - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-11-06 18:50:01,580 [main] INFO  org.hibernate.annotations.common.Version           - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-11-06 18:50:01,680 [main] INFO  org.hibernate.dialect.Dialect                      - HHH000400: Using dialect: org.fatmansoft.teach.sqlite.SQLDialect
+2024-11-06 18:50:02,261 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-11-06 18:50:02,267 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-06 18:50:03,724 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping              - Adding welcome page: class path resource [public/index.html]
+2024-11-06 18:50:03,935 [main] INFO  o.s.s.web.DefaultSecurityFilterChain               - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26b150cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@408980aa, org.springframework.security.web.header.HeaderWriterFilter@5d1eb214, org.springframework.web.filter.CorsFilter@62ff3028, org.springframework.security.web.authentication.logout.LogoutFilter@56017274, org.fatmansoft.teach.security.jwt.AuthTokenFilter@1d9bd4d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34c2e03d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53c21c05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45e68fac, org.springframework.security.web.session.SessionManagementFilter@14091e24, org.springframework.security.web.access.ExceptionTranslationFilter@52b7c1d9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55bafbc1]
+2024-11-06 18:50:04,543 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Starting ProtocolHandler ["http-nio-9090"]
+2024-11-06 18:50:04,608 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 9090 (http) with context path ''
+2024-11-06 18:50:04,621 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - Started SpringBootSecurityJwtApplication in 7.372 seconds (JVM running for 8.464)
+2024-11-06 18:50:04,626 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - SystemInitStart
+2024-11-06 18:50:04,800 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - systemInitEnd
+2024-11-06 18:50:08,444 [http-nio-9090-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-06 18:50:08,445 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet'
+2024-11-06 18:50:08,450 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet                  - Completed initialization in 5 ms
+2024-11-06 18:50:08,558 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:50:08,0.088
+2024-11-06 18:50:08,784 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:50:08,0.219
+2024-11-06 18:50:08,819 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-11-06 18:50:08,0.024
+2024-11-06 18:50:09,408 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:50:09,0.015
+2024-11-06 18:50:09,776 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-11-06 18:50:09,0.623
+2024-11-06 18:50:18,020 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:50:18,0.018
+2024-11-06 18:50:18,330 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:50:18,0.011
+2024-11-06 18:50:19,145 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-11-06 18:50:19,0.012
+2024-11-06 18:50:19,326 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-11-06 18:50:19,0.013
+2024-11-06 18:50:20,513 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-11-06 18:50:20,0.025
+2024-11-06 18:50:20,846 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-11-06 18:50:20,0.016
+2024-11-06 18:50:21,106 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-11-06 18:50:21,0.016
+2024-11-06 18:50:23,971 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-11-06 18:50:23,0.013
+2024-11-06 18:50:24,308 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-11-06 18:50:24,0.012
+2024-11-06 18:50:32,695 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-11-06 18:50:32,696 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,,2024-11-06 18:50:32,0.002
+2024-11-06 18:50:33,055 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:50:33,0.008
+2024-11-06 18:50:40,838 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:50:40,0.001
+2024-11-06 18:50:41,172 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Bad credentials
+2024-11-06 18:50:41,172 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:50:41,0.085
+2024-11-06 18:50:45,716 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:50:45,0.003
+2024-11-06 18:50:46,195 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:50:46,0.151
+2024-11-06 18:50:46,316 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,2022030001,2024-11-06 18:50:46,0.018
+2024-11-06 18:50:46,536 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,2022030001,2024-11-06 18:50:46,0.023
+2024-11-06 18:50:46,602 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-11-06 18:50:46,0.011
+2024-11-06 18:50:48,493 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:50:48,0.01
+2024-11-06 18:50:48,649 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:50:48,0.021
+2024-11-06 18:50:52,003 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:50:51,0.033
+2024-11-06 18:50:53,556 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:50:53,0.013
+2024-11-06 18:50:53,806 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:50:53,0.008
+2024-11-06 18:50:59,177 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:50:59,0.015
+2024-11-06 18:50:59,858 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:50:59,0.012
+2024-11-06 18:51:00,112 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:51:00,0.007
+2024-11-06 18:51:05,035 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/studentCourseSave,2022030001,2024-11-06 18:51:04,0.039
+2024-11-06 18:51:06,866 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:51:06,0.015
+2024-11-06 18:51:08,063 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:51:08,0.014
+2024-11-06 18:51:08,397 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:51:08,0.01
+2024-11-06 18:51:09,777 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:51:09,0.022
+2024-11-06 18:51:11,632 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:51:11,0.013
+2024-11-06 18:51:11,897 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:51:11,0.008
+2024-11-06 18:51:14,550 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/studentCourseSave,2022030001,2024-11-06 18:51:14,0.05
+2024-11-06 18:51:14,889 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:51:14,0.011
+2024-11-06 18:51:15,139 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:51:15,0.006
+2024-11-06 18:51:15,567 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:51:15,0.016
+2024-11-06 18:51:20,688 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/studentCourseDelete,2022030001,2024-11-06 18:51:20,0.063
+2024-11-06 18:51:20,906 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:51:20,0.027
+2024-11-06 18:51:24,494 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-11-06 18:51:24,0.007
+2024-11-06 18:51:24,819 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-11-06 18:51:24,0.003
+2024-11-06 18:51:28,169 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-11-06 18:51:28,0.016
+2024-11-06 18:51:36,174 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:51:36,0.006
+2024-11-06 18:51:38,764 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:51:38,0.003
+2024-11-06 18:51:38,930 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:51:38,0.155
+2024-11-06 18:51:38,958 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-11-06 18:51:38,0.018
+2024-11-06 18:51:38,988 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-11-06 18:51:38,0.008
+2024-11-06 18:51:39,032 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:51:39,0.01
+2024-11-06 18:51:41,549 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:51:41,0.008
+2024-11-06 18:55:30,452 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-11-06 18:55:30,452 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,,2024-11-06 18:55:30,0.001
+2024-11-06 18:55:34,517 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:55:34,0.004
+2024-11-06 18:55:35,458 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:55:35,0.001
+2024-11-06 18:55:35,552 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:55:35,0.082
+2024-11-06 18:55:35,569 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-11-06 18:55:35,0.009
+2024-11-06 18:55:35,601 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-11-06 18:55:35,0.006
+2024-11-06 18:55:35,686 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:55:35,0.004
+2024-11-06 18:55:37,489 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:55:37,0.003
+2024-11-06 18:55:38,168 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-11-06 18:55:38,0.004
+2024-11-06 18:55:38,923 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:55:38,0.01
+2024-11-06 18:55:39,312 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getRoleOptionItemList,admin,2024-11-06 18:55:39,0.004
+2024-11-06 18:55:39,329 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuTreeNodeList,admin,2024-11-06 18:55:39,0.01
+2024-11-06 18:55:40,365 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getDictionaryTreeNodeList,admin,2024-11-06 18:55:40,0.005
+2024-11-06 18:55:40,987 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:55:40,0.004
+2024-11-06 18:55:41,693 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-11-06 18:55:41,0.004
+2024-11-06 18:55:41,928 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-11-06 18:55:41,0.008
+2024-11-06 18:55:42,055 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-11-06 18:55:42,0.005
+2024-11-06 18:55:42,206 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-11-06 18:55:42,0.006
+2024-11-06 18:55:42,379 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-11-06 18:55:42,0.006
+2024-11-06 18:55:57,022 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-11-06 18:55:57,022 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,,2024-11-06 18:55:57,0.0
+2024-11-06 18:57:27,114 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-11-06 18:57:27,115 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,,2024-11-06 18:57:27,0.0
+2024-11-06 18:57:27,154 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:27,0.002
+2024-11-06 18:57:28,691 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:28,0.004
+2024-11-06 18:57:32,916 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:32,0.003
+2024-11-06 18:57:33,076 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:33,0.003
+2024-11-06 18:57:34,191 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:34,0.004
+2024-11-06 18:57:34,317 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:34,0.003
+2024-11-06 18:57:36,092 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:36,0.005
+2024-11-06 18:57:36,363 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:36,0.004
+2024-11-06 18:57:36,932 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:36,0.004
+2024-11-06 18:57:37,208 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:37,0.004
+2024-11-06 18:57:37,820 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:37,0.003
+2024-11-06 18:57:38,049 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 18:57:38,0.003
+2024-11-06 18:57:39,797 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 18:57:39,0.0
+2024-11-06 18:57:39,879 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 18:57:39,0.077
+2024-11-06 18:57:39,892 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-11-06 18:57:39,0.007
+2024-11-06 18:57:39,910 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-11-06 18:57:39,0.004
+2024-11-06 18:57:40,348 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:57:40,0.005
+2024-11-06 18:57:41,821 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:57:41,0.004
+2024-11-06 18:57:42,756 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:57:42,0.004
+2024-11-06 18:57:43,898 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 18:57:43,0.004
+2024-11-06 18:57:44,457 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:57:44,0.005
+2024-11-06 18:57:45,132 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:57:45,0.004
+2024-11-06 18:57:45,712 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:57:45,0.003
+2024-11-06 18:57:46,430 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,admin,2024-11-06 18:57:46,0.003
+2024-11-06 19:03:08,971 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-11-06 19:03:08,972 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/student/getStudentPageData,,2024-11-06 19:03:08,0.0
+2024-11-06 19:03:09,031 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-11-06 19:03:09,0.003
+2024-11-06 19:03:10,558 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-11-06 19:03:10,0.001
+2024-11-06 19:03:10,654 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-11-06 19:03:10,0.084
+2024-11-06 19:03:10,674 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-11-06 19:03:10,0.009
+2024-11-06 19:03:10,679 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-11-06 19:03:10,0.01
+2024-11-06 19:03:10,753 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 19:03:10,0.004
+2024-11-06 19:03:13,139 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-11-06 19:03:13,0.007

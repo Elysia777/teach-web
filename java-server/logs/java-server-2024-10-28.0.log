@@ -1,0 +1,491 @@
+2024-10-28 08:12:52,526 [background-preinit] INFO  o.h.validator.internal.util.Version                - HV000001: Hibernate Validator 6.2.0.Final
+2024-10-28 08:12:52,538 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - Starting SpringBootSecurityJwtApplication using Java 17.0.8 on LAPTOP-93H8MNO6 with PID 2640 (C:\Users\28425\Downloads\teach-web\java-server\target\classes started by 28425 in C:\Users\28425\Downloads\teach-web\java-server)
+2024-10-28 08:12:52,538 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - No active profile set, falling back to default profiles: default
+2024-10-28 08:12:54,209 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-10-28 08:12:54,212 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28 08:12:55,045 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate          - Finished Spring Data repository scanning in 816 ms. Found 20 JPA repository interfaces.
+2024-10-28 08:12:55,244 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5e922647' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-28 08:12:55,247 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-10-28 08:12:55,415 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port(s): 9090 (http)
+2024-10-28 08:12:55,421 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Initializing ProtocolHandler ["http-nio-9090"]
+2024-10-28 08:12:55,421 [main] INFO  org.apache.catalina.core.StandardService           - Starting service [Tomcat]
+2024-10-28 08:12:55,421 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-10-28 08:12:55,507 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring embedded WebApplicationContext
+2024-10-28 08:12:55,507 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 2940 ms
+2024-10-28 08:12:55,567 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28 08:12:55,594 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Starting...
+2024-10-28 08:12:55,905 [main] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Start completed.
+2024-10-28 08:12:55,968 [main] INFO  o.hibernate.jpa.internal.util.LogHelper            - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28 08:12:56,008 [main] INFO  org.hibernate.Version                              - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-10-28 08:12:56,177 [main] INFO  org.hibernate.annotations.common.Version           - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-10-28 08:12:56,290 [main] INFO  org.hibernate.dialect.Dialect                      - HHH000400: Using dialect: org.fatmansoft.teach.sqlite.SQLDialect
+2024-10-28 08:12:57,603 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-10-28 08:12:57,609 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28 08:12:58,889 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping              - Adding welcome page: class path resource [public/index.html]
+2024-10-28 08:12:58,955 [main] INFO  o.s.s.web.DefaultSecurityFilterChain               - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4767be27, org.springframework.security.web.context.SecurityContextPersistenceFilter@d6879bf, org.springframework.security.web.header.HeaderWriterFilter@16e3d6d0, org.springframework.web.filter.CorsFilter@46f041cb, org.springframework.security.web.authentication.logout.LogoutFilter@29f114e0, org.fatmansoft.teach.security.jwt.AuthTokenFilter@951e911, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@318a81a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33a58fcb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46baac0d, org.springframework.security.web.session.SessionManagementFilter@949f0d, org.springframework.security.web.access.ExceptionTranslationFilter@57a0aeb8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53570fff]
+2024-10-28 08:12:59,139 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Starting ProtocolHandler ["http-nio-9090"]
+2024-10-28 08:12:59,195 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port(s): 9090 (http) with context path ''
+2024-10-28 08:12:59,205 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - Started SpringBootSecurityJwtApplication in 6.968 seconds (JVM running for 7.491)
+2024-10-28 08:12:59,207 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - SystemInitStart
+2024-10-28 08:12:59,341 [main] INFO  o.f.t.SpringBootSecurityJwtApplication             - systemInitEnd
+2024-10-28 08:15:26,808 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28 08:15:26,808 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet'
+2024-10-28 08:15:26,816 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet                  - Completed initialization in 0 ms
+2024-10-28 08:15:26,906 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /,,2024-10-28 08:15:26,0.05
+2024-10-28 08:15:26,984 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-791c92ba.css,,2024-10-28 08:15:26,0.022
+2024-10-28 08:15:27,055 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-284e2513.js,,2024-10-28 08:15:26,0.09
+2024-10-28 08:15:27,191 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-9ad7a75d.css,,2024-10-28 08:15:27,0.014
+2024-10-28 08:15:27,233 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-3d3e5d5d.js,,2024-10-28 08:15:27,0.056
+2024-10-28 08:15:27,304 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:15:27,305 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:15:27,0.001
+2024-10-28 08:15:27,360 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/messageBox-2cdc502c.js,,2024-10-28 08:15:27,0.183
+2024-10-28 08:15:27,423 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /wx.png,,2024-10-28 08:15:27,0.004
+2024-10-28 08:15:27,428 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /en.png,,2024-10-28 08:15:27,0.012
+2024-10-28 08:15:27,428 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /logo.png,,2024-10-28 08:15:27,0.013
+2024-10-28 08:15:27,429 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /hi.png,,2024-10-28 08:15:27,0.014
+2024-10-28 08:15:27,429 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /studentms.png,,2024-10-28 08:15:27,0.014
+2024-10-28 08:15:27,439 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginStudentms.png,,2024-10-28 08:15:27,0.006
+2024-10-28 08:15:27,439 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /password.png,,2024-10-28 08:15:27,0.013
+2024-10-28 08:15:27,446 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /certifiy.png,,2024-10-28 08:15:27,0.013
+2024-10-28 08:15:27,447 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginName.png,,2024-10-28 08:15:27,0.014
+2024-10-28 08:15:27,447 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:15:27,447 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /backgroud.png,,2024-10-28 08:15:27,0.015
+2024-10-28 08:15:27,447 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:15:27,0.0
+2024-10-28 08:15:27,843 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:15:27,0.431
+2024-10-28 08:16:28,632 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:16:28,0.003
+2024-10-28 08:16:28,821 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Bad credentials
+2024-10-28 08:16:28,821 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:16:28,0.183
+2024-10-28 08:16:32,270 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:16:32,0.001
+2024-10-28 08:16:32,404 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:16:32,0.13
+2024-10-28 08:16:32,432 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,2022030001,2024-10-28 08:16:32,0.022
+2024-10-28 08:16:32,449 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,2022030001,2024-10-28 08:16:32,0.005
+2024-10-28 08:16:32,453 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /gradms.png,,2024-10-28 08:16:32,0.008
+2024-10-28 08:16:32,454 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /refresh.png,,2024-10-28 08:16:32,0.008
+2024-10-28 08:16:32,461 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /sdu.png,,2024-10-28 08:16:32,0.016
+2024-10-28 08:16:32,462 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /tuichu.png,,2024-10-28 08:16:32,0.016
+2024-10-28 08:16:32,509 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-78a6bc98.css,,2024-10-28 08:16:32,0.016
+2024-10-28 08:16:32,513 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-6c11ce30.js,,2024-10-28 08:16:32,0.028
+2024-10-28 08:16:33,041 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-c9644a46.js,,2024-10-28 08:16:32,0.548
+2024-10-28 08:16:33,117 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:16:33,0.003
+2024-10-28 08:16:33,123 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:33,123 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:33,0.001
+2024-10-28 08:16:33,128 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:16:33,0.015
+2024-10-28 08:16:33,133 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /littleT.png,,2024-10-28 08:16:33,0.017
+2024-10-28 08:16:33,134 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:16:33,0.018
+2024-10-28 08:16:38,086 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/SystemIntroduce-3b54a780.js,,2024-10-28 08:16:38,0.024
+2024-10-28 08:16:38,123 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:38,123 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:38,0.0
+2024-10-28 08:16:39,182 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:39,182 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:39,0.0
+2024-10-28 08:16:39,184 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:16:39,0.002
+2024-10-28 08:16:39,184 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:16:39,0.002
+2024-10-28 08:16:39,225 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:16:39,0.006
+2024-10-28 08:16:39,661 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:39,661 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:39,0.0
+2024-10-28 08:16:42,210 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:42,211 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:42,0.001
+2024-10-28 08:16:42,858 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:42,858 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:42,0.0
+2024-10-28 08:16:43,371 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:43,372 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:43,0.001
+2024-10-28 08:16:43,766 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:43,766 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:43,0.001
+2024-10-28 08:16:44,383 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:16:44,384 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:16:44,0.001
+2024-10-28 08:17:08,327 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:08,328 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:08,0.001
+2024-10-28 08:17:08,331 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:17:08,0.004
+2024-10-28 08:17:08,331 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:17:08,0.004
+2024-10-28 08:17:08,365 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:17:08,0.005
+2024-10-28 08:17:08,792 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:08,793 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:08,0.001
+2024-10-28 08:17:09,340 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Password-97f7609d.css,,2024-10-28 08:17:09,0.022
+2024-10-28 08:17:09,341 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Password-cee29fa5.js,,2024-10-28 08:17:09,0.024
+2024-10-28 08:17:09,352 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/infoServ-321476ae.js,,2024-10-28 08:17:09,0.035
+2024-10-28 08:17:09,395 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:09,395 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:09,0.0
+2024-10-28 08:17:10,088 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:10,088 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:10,0.001
+2024-10-28 08:17:10,112 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /projectDoc.html,,2024-10-28 08:17:10,0.03
+2024-10-28 08:17:10,175 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /img/1.png,,2024-10-28 08:17:10,0.044
+2024-10-28 08:17:10,356 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:10,356 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:10,0.001
+2024-10-28 08:17:13,573 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:13,573 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:13,0.001
+2024-10-28 08:17:13,580 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /projectVideo.html,,2024-10-28 08:17:13,0.013
+2024-10-28 08:17:13,743 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:13,743 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:13,0.0
+2024-10-28 08:17:15,358 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:15,358 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:15,0.0
+2024-10-28 08:17:15,361 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:17:15,0.004
+2024-10-28 08:17:15,362 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:17:15,0.005
+2024-10-28 08:17:15,368 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:17:15,0.009
+2024-10-28 08:17:15,715 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:15,716 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:15,0.001
+2024-10-28 08:17:16,205 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:16,206 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:16,0.001
+2024-10-28 08:17:17,048 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:17,048 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:17,0.0
+2024-10-28 08:17:17,852 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:17,853 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:17,0.001
+2024-10-28 08:17:18,847 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:18,848 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:18,0.001
+2024-10-28 08:17:19,460 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:17:19,461 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:17:19,0.001
+2024-10-28 08:18:32,949 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:32,949 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:32,0.001
+2024-10-28 08:18:33,568 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:33,569 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:33,0.001
+2024-10-28 08:18:33,891 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:33,892 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:33,0.001
+2024-10-28 08:18:34,660 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:34,660 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:18:34,0.006
+2024-10-28 08:18:34,660 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:18:34,0.005
+2024-10-28 08:18:34,660 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:34,0.001
+2024-10-28 08:18:34,670 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:18:34,0.01
+2024-10-28 08:18:35,410 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:35,410 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:35,0.0
+2024-10-28 08:18:35,851 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:35,852 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:35,0.001
+2024-10-28 08:18:36,306 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:36,307 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:36,0.0
+2024-10-28 08:18:36,601 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:36,601 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:36,0.0
+2024-10-28 08:18:36,811 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:36,811 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:36,0.0
+2024-10-28 08:18:37,062 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:37,063 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:37,0.001
+2024-10-28 08:18:37,277 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:37,277 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:37,0.0
+2024-10-28 08:18:37,498 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:37,499 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:37,0.0
+2024-10-28 08:18:37,739 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:37,739 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:37,0.0
+2024-10-28 08:18:37,894 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:37,895 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:37,0.0
+2024-10-28 08:18:38,111 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:38,111 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:38,0.001
+2024-10-28 08:18:38,309 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:38,311 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:38,0.002
+2024-10-28 08:18:38,528 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:38,528 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:38,0.0
+2024-10-28 08:18:38,725 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:38,726 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:38,0.0
+2024-10-28 08:18:38,949 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:38,949 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:38,0.0
+2024-10-28 08:18:39,301 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:39,302 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:39,0.001
+2024-10-28 08:18:39,307 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:18:39,0.006
+2024-10-28 08:18:39,307 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:18:39,0.006
+2024-10-28 08:18:39,312 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:18:39,0.011
+2024-10-28 08:18:40,470 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:18:40,0.006
+2024-10-28 08:18:41,250 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:41,250 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:41,0.001
+2024-10-28 08:18:41,469 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:41,470 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:41,0.001
+2024-10-28 08:18:42,136 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:42,136 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:42,0.001
+2024-10-28 08:18:42,139 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:18:42,0.005
+2024-10-28 08:18:42,139 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:18:42,0.005
+2024-10-28 08:18:42,151 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:18:42,0.009
+2024-10-28 08:18:42,690 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:42,690 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:42,0.0
+2024-10-28 08:18:42,925 [http-nio-9090-exec-8] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:42,925 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:42,0.0
+2024-10-28 08:18:43,347 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:43,347 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:43,0.001
+2024-10-28 08:18:43,595 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:43,596 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:43,0.002
+2024-10-28 08:18:43,851 [http-nio-9090-exec-9] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:43,851 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:43,0.0
+2024-10-28 08:18:44,091 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:44,091 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:44,0.001
+2024-10-28 08:18:44,456 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:44,456 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:44,0.0
+2024-10-28 08:18:49,986 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /,,2024-10-28 08:18:49,0.004
+2024-10-28 08:18:50,016 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-791c92ba.css,,2024-10-28 08:18:50,0.008
+2024-10-28 08:18:50,021 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-284e2513.js,,2024-10-28 08:18:50,0.013
+2024-10-28 08:18:50,112 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-9ad7a75d.css,,2024-10-28 08:18:50,0.01
+2024-10-28 08:18:50,112 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-3d3e5d5d.js,,2024-10-28 08:18:50,0.01
+2024-10-28 08:18:50,118 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/messageBox-2cdc502c.js,,2024-10-28 08:18:50,0.016
+2024-10-28 08:18:50,165 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:50,166 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:50,0.001
+2024-10-28 08:18:50,215 [http-nio-9090-exec-6] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:18:50,216 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:18:50,0.001
+2024-10-28 08:18:50,225 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /logo.png,,2024-10-28 08:18:50,0.01
+2024-10-28 08:18:50,229 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /wx.png,,2024-10-28 08:18:50,0.014
+2024-10-28 08:18:50,229 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /hi.png,,2024-10-28 08:18:50,0.013
+2024-10-28 08:18:50,229 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /studentms.png,,2024-10-28 08:18:50,0.014
+2024-10-28 08:18:50,229 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /en.png,,2024-10-28 08:18:50,0.013
+2024-10-28 08:18:50,241 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:18:50,0.005
+2024-10-28 08:18:50,243 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginStudentms.png,,2024-10-28 08:18:50,0.011
+2024-10-28 08:18:50,243 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /certifiy.png,,2024-10-28 08:18:50,0.01
+2024-10-28 08:18:50,243 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /password.png,,2024-10-28 08:18:50,0.01
+2024-10-28 08:18:50,243 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginName.png,,2024-10-28 08:18:50,0.011
+2024-10-28 08:18:50,250 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /backgroud.png,,2024-10-28 08:18:50,0.02
+2024-10-28 08:19:05,856 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:19:05,0.001
+2024-10-28 08:19:05,964 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:19:05,0.103
+2024-10-28 08:19:05,995 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-10-28 08:19:05,0.021
+2024-10-28 08:19:06,038 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-10-28 08:19:06,0.024
+2024-10-28 08:19:06,124 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /gradms.png,,2024-10-28 08:19:06,0.01
+2024-10-28 08:19:06,124 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /sdu.png,,2024-10-28 08:19:06,0.01
+2024-10-28 08:19:06,165 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-6c11ce30.js,,2024-10-28 08:19:06,0.02
+2024-10-28 08:19:06,168 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-c9644a46.js,,2024-10-28 08:19:06,0.027
+2024-10-28 08:19:06,168 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-78a6bc98.css,,2024-10-28 08:19:06,0.022
+2024-10-28 08:19:06,203 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /tuichu.png,,2024-10-28 08:19:06,0.009
+2024-10-28 08:19:06,203 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /refresh.png,,2024-10-28 08:19:06,0.009
+2024-10-28 08:19:06,416 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:06,417 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:06,0.001
+2024-10-28 08:19:06,425 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:19:06,0.011
+2024-10-28 08:19:06,425 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:19:06,0.01
+2024-10-28 08:19:06,426 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /littleT.png,,2024-10-28 08:19:06,0.01
+2024-10-28 08:19:06,525 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-10-28 08:19:06,0.023
+2024-10-28 08:19:10,115 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/teachingServ-c63538bc.js,,2024-10-28 08:19:10,0.037
+2024-10-28 08:19:10,118 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/CourseTable-61c0092c.js,,2024-10-28 08:19:10,0.04
+2024-10-28 08:19:10,134 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:10,134 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:10,0.0
+2024-10-28 08:19:10,145 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:19:10,0.011
+2024-10-28 08:19:10,982 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/ScoreTable-b4190e12.js,,2024-10-28 08:19:10,0.041
+2024-10-28 08:19:11,008 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:11,009 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:11,0.001
+2024-10-28 08:19:11,046 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-10-28 08:19:11,0.019
+2024-10-28 08:19:11,080 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-10-28 08:19:11,0.01
+2024-10-28 08:19:11,095 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-10-28 08:19:11,0.009
+2024-10-28 08:19:11,863 [http-nio-9090-exec-5] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:11,863 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:11,0.0
+2024-10-28 08:19:11,884 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:19:11,0.006
+2024-10-28 08:19:12,529 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:12,529 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:12,0.001
+2024-10-28 08:19:12,557 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-10-28 08:19:12,0.008
+2024-10-28 08:19:12,579 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-10-28 08:19:12,0.007
+2024-10-28 08:19:12,590 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-10-28 08:19:12,0.007
+2024-10-28 08:19:13,259 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:19:13,259 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:19:13,0.001
+2024-10-28 08:19:13,287 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:19:13,0.009
+2024-10-28 08:19:36,414 [http-nio-9090-exec-4] ERROR o.a.c.c.C.[.[.[/].[dispatcherServlet]              - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "java.util.Optional.get()" because "tc" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "java.util.Optional.get()" because "tc" is null
+	at org.fatmansoft.teach.controllers.CourseController.courseSave(CourseController.java:128)
+	at org.fatmansoft.teach.controllers.CourseController$$FastClassBySpringCGLIB$$b38759c0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.fatmansoft.teach.controllers.CourseController$$EnhancerBySpringCGLIB$$dbda2a38.courseSave(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.fatmansoft.teach.security.jwt.AuthTokenFilter.doFilterInternal(AuthTokenFilter.java:54)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142)
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-10-28 08:20:13,563 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:20:13,0.006
+2024-10-28 08:20:23,369 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:20:23,0.002
+2024-10-28 08:20:23,806 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:20:23,0.172
+2024-10-28 08:20:23,852 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-10-28 08:20:23,0.024
+2024-10-28 08:20:24,193 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-10-28 08:20:24,0.011
+2024-10-28 08:20:25,013 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-10-28 08:20:25,0.011
+2024-10-28 08:20:26,707 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:20:26,0.008
+2024-10-28 08:20:26,745 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-10-28 08:20:26,0.028
+2024-10-28 08:20:36,020 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/courseSave,admin,2024-10-28 08:20:35,0.058
+2024-10-28 08:20:36,238 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:20:36,0.015
+2024-10-28 08:20:36,364 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-10-28 08:20:36,0.02
+2024-10-28 08:20:40,519 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/courseDelete,admin,2024-10-28 08:20:40,0.05
+2024-10-28 08:20:40,860 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:20:40,0.015
+2024-10-28 08:20:41,098 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,admin,2024-10-28 08:20:41,0.006
+2024-10-28 08:20:44,452 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:20:44,0.007
+2024-10-28 08:20:54,658 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:20:54,0.002
+2024-10-28 08:20:54,795 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:20:54,0.125
+2024-10-28 08:20:54,844 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,2022030001,2024-10-28 08:20:54,0.032
+2024-10-28 08:20:54,889 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,2022030001,2024-10-28 08:20:54,0.009
+2024-10-28 08:20:54,970 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:20:54,0.008
+2024-10-28 08:20:56,547 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-10-28 08:20:56,0.006
+2024-10-28 08:20:56,565 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-10-28 08:20:56,0.01
+2024-10-28 08:20:58,635 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,2022030001,2024-10-28 08:20:58,0.05
+2024-10-28 08:20:59,298 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,2022030001,2024-10-28 08:20:59,0.01
+2024-10-28 08:20:59,337 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,2022030001,2024-10-28 08:20:59,0.006
+2024-10-28 08:23:24,360 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /,,2024-10-28 08:23:24,0.008
+2024-10-28 08:23:24,402 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-791c92ba.css,,2024-10-28 08:23:24,0.009
+2024-10-28 08:23:24,406 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-284e2513.js,,2024-10-28 08:23:24,0.013
+2024-10-28 08:23:24,525 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-3d3e5d5d.js,,2024-10-28 08:23:24,0.013
+2024-10-28 08:23:24,529 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/Login-9ad7a75d.css,,2024-10-28 08:23:24,0.015
+2024-10-28 08:23:24,544 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/messageBox-2cdc502c.js,,2024-10-28 08:23:24,0.032
+2024-10-28 08:23:24,593 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:24,594 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:24,0.001
+2024-10-28 08:23:24,635 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /hi.png,,2024-10-28 08:23:24,0.011
+2024-10-28 08:23:24,636 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /logo.png,,2024-10-28 08:23:24,0.011
+2024-10-28 08:23:24,637 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /studentms.png,,2024-10-28 08:23:24,0.012
+2024-10-28 08:23:24,639 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /wx.png,,2024-10-28 08:23:24,0.013
+2024-10-28 08:23:24,638 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /en.png,,2024-10-28 08:23:24,0.012
+2024-10-28 08:23:24,641 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:24,641 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:24,0.0
+2024-10-28 08:23:24,641 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginStudentms.png,,2024-10-28 08:23:24,0.005
+2024-10-28 08:23:24,651 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /backgroud.png,,2024-10-28 08:23:24,0.025
+2024-10-28 08:23:24,651 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /password.png,,2024-10-28 08:23:24,0.011
+2024-10-28 08:23:24,651 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /loginName.png,,2024-10-28 08:23:24,0.011
+2024-10-28 08:23:24,652 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /certifiy.png,,2024-10-28 08:23:24,0.011
+2024-10-28 08:23:24,697 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:23:24,0.006
+2024-10-28 08:23:37,486 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:23:37,0.001
+2024-10-28 08:23:37,592 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:23:37,0.095
+2024-10-28 08:23:37,633 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-10-28 08:23:37,0.038
+2024-10-28 08:23:37,672 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-10-28 08:23:37,0.015
+2024-10-28 08:23:37,682 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /gradms.png,,2024-10-28 08:23:37,0.017
+2024-10-28 08:23:37,685 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /refresh.png,,2024-10-28 08:23:37,0.019
+2024-10-28 08:23:37,685 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /tuichu.png,,2024-10-28 08:23:37,0.018
+2024-10-28 08:23:37,683 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /sdu.png,,2024-10-28 08:23:37,0.019
+2024-10-28 08:23:37,709 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-6c11ce30.js,,2024-10-28 08:23:37,0.012
+2024-10-28 08:23:37,710 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/MainPage-78a6bc98.css,,2024-10-28 08:23:37,0.012
+2024-10-28 08:23:37,716 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/index-c9644a46.js,,2024-10-28 08:23:37,0.018
+2024-10-28 08:23:37,762 [http-nio-9090-exec-7] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:37,762 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:37,0.0
+2024-10-28 08:23:37,767 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-10-28 08:23:37,0.006
+2024-10-28 08:23:37,769 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /user.png,,2024-10-28 08:23:37,0.007
+2024-10-28 08:23:37,769 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /littleT.png,,2024-10-28 08:23:37,0.007
+2024-10-28 08:23:37,769 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /dayOrder.png,,2024-10-28 08:23:37,0.007
+2024-10-28 08:23:39,548 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/CourseTable-61c0092c.js,,2024-10-28 08:23:39,0.013
+2024-10-28 08:23:39,549 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/teachingServ-c63538bc.js,,2024-10-28 08:23:39,0.014
+2024-10-28 08:23:39,577 [http-nio-9090-exec-3] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:39,578 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:39,0.001
+2024-10-28 08:23:39,585 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:23:39,0.005
+2024-10-28 08:23:40,069 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /assets/ScoreTable-b4190e12.js,,2024-10-28 08:23:40,0.007
+2024-10-28 08:23:40,098 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:40,098 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:40,0.0
+2024-10-28 08:23:40,104 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-10-28 08:23:40,0.007
+2024-10-28 08:23:40,115 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-10-28 08:23:40,0.008
+2024-10-28 08:23:40,128 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-10-28 08:23:40,0.009
+2024-10-28 08:23:41,461 [http-nio-9090-exec-10] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:41,462 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:41,0.002
+2024-10-28 08:23:41,478 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:23:41,0.007
+2024-10-28 08:23:42,348 [http-nio-9090-exec-1] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:42,348 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:42,0.0
+2024-10-28 08:23:42,394 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getScoreList,admin,2024-10-28 08:23:42,0.009
+2024-10-28 08:23:42,430 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getStudentItemOptionList,admin,2024-10-28 08:23:42,0.009
+2024-10-28 08:23:42,449 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/score/getCourseItemOptionList,admin,2024-10-28 08:23:42,0.014
+2024-10-28 08:23:42,796 [http-nio-9090-exec-2] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:23:42,797 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /favicon.ico,,2024-10-28 08:23:42,0.001
+2024-10-28 08:23:42,824 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,admin,2024-10-28 08:23:42,0.005
+2024-10-28 08:31:14,753 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 08:31:14,754 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,,2024-10-28 08:31:14,0.002
+2024-10-28 08:31:14,769 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 08:31:14,0.014
+2024-10-28 08:31:18,708 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 08:31:18,0.002
+2024-10-28 08:31:19,143 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 08:31:19,0.116
+2024-10-28 08:31:19,298 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,2022030001,2024-10-28 08:31:19,0.009
+2024-10-28 08:31:19,513 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,2022030001,2024-10-28 08:31:19,0.034
+2024-10-28 08:31:19,613 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,2022030001,2024-10-28 08:31:19,0.004
+2024-10-28 09:12:01,459 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:12:01,0.006
+2024-10-28 09:12:07,580 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:12:07,0.002
+2024-10-28 09:12:07,607 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:12:07,0.007
+2024-10-28 09:12:10,500 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:12:10,0.002
+2024-10-28 09:12:10,840 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:12:10,0.007
+2024-10-28 09:12:15,522 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:12:15,0.001
+2024-10-28 09:12:36,225 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:12:36,0.001
+2024-10-28 09:12:36,637 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 09:12:36,0.152
+2024-10-28 09:12:36,674 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,admin,2024-10-28 09:12:36,0.025
+2024-10-28 09:12:37,025 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,admin,2024-10-28 09:12:37,0.012
+2024-10-28 09:12:37,127 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,admin,2024-10-28 09:12:37,0.005
+2024-10-28 09:25:32,347 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:25:32,0.003
+2024-10-28 09:46:20,718 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:46:20,0.001
+2024-10-28 09:46:21,242 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/registerUser,,2024-10-28 09:46:20,0.277
+2024-10-28 09:46:21,262 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:46:21,0.006
+2024-10-28 09:46:28,236 [http-nio-9090-exec-2] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/testValidateInfo,,2024-10-28 09:46:28,0.002
+2024-10-28 09:46:28,640 [http-nio-9090-exec-7] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/login,,2024-10-28 09:46:28,0.139
+2024-10-28 09:46:28,674 [http-nio-9090-exec-8] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/base/getMenuList,202300300045,2024-10-28 09:46:28,0.019
+2024-10-28 09:46:29,027 [http-nio-9090-exec-10] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,202300300045,2024-10-28 09:46:29,0.016
+2024-10-28 09:46:29,147 [http-nio-9090-exec-9] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/statistics/getMainPageData,202300300045,2024-10-28 09:46:29,0.005
+2024-10-28 09:46:31,020 [http-nio-9090-exec-5] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getCourseList,202300300045,2024-10-28 09:46:31,0.008
+2024-10-28 09:46:31,036 [http-nio-9090-exec-1] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/teacher/getTeacherList,202300300045,2024-10-28 09:46:31,0.008
+2024-10-28 09:46:31,541 [http-nio-9090-exec-3] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,202300300045,2024-10-28 09:46:31,0.003
+2024-10-28 09:46:35,494 [http-nio-9090-exec-4] ERROR o.f.teach.security.jwt.AuthEntryPointJwt           - Unauthorized error: Full authentication is required to access this resource
+2024-10-28 09:46:35,494 [http-nio-9090-exec-4] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/course/getStudentCourseList,,2024-10-28 09:46:35,0.0
+2024-10-28 09:46:35,810 [http-nio-9090-exec-6] INFO  o.f.teach.security.jwt.AuthTokenFilter             - /api/auth/getValidateCode,,2024-10-28 09:46:35,0.015
+2024-10-28 09:48:03,114 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean     - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28 09:48:03,116 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Shutdown initiated...
+2024-10-28 09:48:03,120 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource                 - HikariPool-1 - Shutdown completed.
