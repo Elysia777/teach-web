@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.fatmansoft.teach.models.*;
 import org.fatmansoft.teach.payload.request.DataRequest;
 import org.fatmansoft.teach.payload.response.DataResponse;
@@ -38,6 +40,7 @@ import org.fatmansoft.teach.payload.response.MessageResponse;
 import org.fatmansoft.teach.security.jwt.JwtUtils;
 import org.fatmansoft.teach.security.services.UserDetailsImpl;
 import org.yaml.snakeyaml.Yaml;
+import io.jsonwebtoken.*;
 
 /**
  *  AuthController 实现 登录和注册Web服务
@@ -98,6 +101,16 @@ public class AuthController {
             else count += 1;
             user.setLoginCount(count);
             userRepository.save(user);
+        }
+        if (op.get().getUserType().getId().equals(1)){
+            JwtResponse jwtResponse[] =new JwtResponse[3];
+            String s=jwtUtils.generateJwtTokenAdmin("admin");
+            String s1=jwtUtils.generateJwtTokenAdmin("2022030001");
+            String s2=jwtUtils.generateJwtTokenAdmin("200799013517");
+            jwtResponse[0] =new JwtResponse(s,1,"admin","管理员","ADMIN");
+            jwtResponse[1]=new JwtResponse(s1,2,"2022030001","杨平","STUDENT");
+            jwtResponse[2]=new JwtResponse(s2,3,"200799013517","李学庆","TEACHER");
+            return ResponseEntity.ok(jwtResponse);
         }
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
