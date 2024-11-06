@@ -45,16 +45,18 @@ export const useAppStore = defineStore('app', {
   actions: {
     //登录方法，登录成功后设置用户信息
     async login(username: string, password: string): Promise<void> {
-      const res = await userLoginReq(username, password)
+      const res = await userLoginReq(username, password) as any[]
       this.userInfo = {
         loggedIn: true,
-        username: res.username,
-        perName: res.perName,
-        jwtToken: res.accessToken,
-        id: res.id,
-        roles: res.roles,
+        username: res[0].username,
+        perName: res[0].perName,
+        jwtToken: res[0].accessToken,
+        id: res[0].id,
+        roles: res[0].roles,
         password: password
       }
+      localStorage.setItem("testUserRoleStudent",res[1])
+      localStorage.setItem("testUserRoleTeacher",res[2])
     },
     //注销方法，注销后清除用户信息
     logout() {

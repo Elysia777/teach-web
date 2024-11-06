@@ -1,4 +1,4 @@
-<template>
+<template xmlns="">
   <div style="height: 100%">
     <!-- 当登录成功后显示此DIV -->
     <div
@@ -29,6 +29,19 @@
                 </div>
                 <div class="section4 flex-col"></div>
 
+                <el-dropdown @command="handleCommand" class="section4-1">
+              <span class="el-dropdown-link">
+                    切换用户<el-icon class="el-icon--right"><arrow-down/></el-icon>
+                </span>
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item v-for="user in userList" :key="user.username">
+                        {{user.username}}
+                      </el-dropdown-item>
+
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
                 <div class="section5">
                   <div class="shuxinImage"></div>
                   <div class="shuaxin">刷新</div>
@@ -144,13 +157,14 @@ import { mapState } from 'pinia'
 import { defineComponent } from 'vue'
 import { useAppStore } from '@/stores/app'
 import router from '@/router'
-import { type MenuInfo } from '@/models/general'
+import {type MenuInfo, type UserInfo} from '@/models/general'
 import { formatTime } from '@/tools/comMethod'
 // vue3中新增了 defineComponent ，它并没有实现任何的逻辑，只是把接收的 Object 直接返回，它的存在就是完全为了服务 TypeScript 而存在的。
 // 我都知道普通的组件就是一个普通的对象，既然是一个普通的对象，那自然就不会获得自动的提示，
 export default defineComponent({
   // templte中使用的数据
   data: () => ({
+    userList: [] as UserInfo[],
     isCollapse: false,
     leList: [] as MenuInfo[],
     funId: '',
@@ -160,6 +174,26 @@ export default defineComponent({
   }),
   //生命周期函数  mounted() 在实例挂载之后调用， 设置定期刷新控制台时间
   mounted() {
+    this.userList=[
+      {
+        loggedIn:true,
+        username:"xyq77",
+        perName:"xyq77",
+        jwtToken:"xxxxxxxx",
+        id:1,
+        roles:"22",
+        password:"xxxx",
+      },
+      {
+        loggedIn:true,
+        username:"xyq7778",
+        perName:"xyq8877",
+        jwtToken:"xxxxxxxx",
+        id:1,
+        roles:"22",
+        password:"xxxx",
+      }
+    ]
     if (this.timer) {
       clearInterval(this.timer)
     } else {
@@ -178,6 +212,9 @@ export default defineComponent({
     ...mapState(useAppStore, ['userInfo'])
   },
   methods: {
+    handleCommand(){
+
+    },
     // 退出登录
     logout() {
       const store = useAppStore()
@@ -219,6 +256,11 @@ export default defineComponent({
 </script>
 <!-- 这个是系统主页面的样式，同学可以根据自己的喜好修改 -->
 <style lang="scss" scoped>
+.section4-1{
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
 .el-menu-item.is-active {
   background-color: rgb(105, 74, 74) !important;
 }
@@ -341,7 +383,6 @@ export default defineComponent({
   cursor: pointer;
   margin-top: 23px;
   margin-left: 18px;
-  background: url('/leftright.png');
   width: 18px;
   height: 18px;
 }
