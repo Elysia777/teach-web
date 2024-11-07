@@ -21,7 +21,6 @@ export const useAppStore = defineStore('app', {
       jwtToken: '',
       id: 0,
       roles: '',
-      password: ''
     } as UserInfo,
     systemConfig: {
       naviList: defaultNaviList,
@@ -45,20 +44,16 @@ export const useAppStore = defineStore('app', {
   actions: {
     //登录方法，登录成功后设置用户信息
     async login(username: string, password: string): Promise<void> {
-      const res = await userLoginReq(username, password) as any[]
+      const res = await userLoginReq(username, password)
     console.log(res)
       this.userInfo = {
         loggedIn: true,
-        username: res[0].username,
-        perName: res[0].perName,
-        jwtToken: res[0].accessToken,
-        id: res[0].id,
-        roles: res[0].roles,
-        password: password
+        username: res.username,
+        perName: res.perName,
+        jwtToken: res.accessToken,
+        id: res.id,
+        roles: res.roles,
       }
-      localStorage.setItem("testUserRoleAdmin",JSON.stringify(res[0]))
-      localStorage.setItem("testUserRoleStudent",JSON.stringify(res[1]))
-      localStorage.setItem("testUserRoleTeacher",JSON.stringify(res[2]))
     },
     //注销方法，注销后清除用户信息
     logout() {
@@ -69,7 +64,6 @@ export const useAppStore = defineStore('app', {
         jwtToken: '',
         roles: '',
         id: 0,
-        password: ''
       }
       this.systemConfig.naviList = []
     },

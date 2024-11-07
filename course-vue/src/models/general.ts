@@ -82,7 +82,6 @@ export interface UserInfo {
   jwtToken: string
   id: number
   roles: string
-  password: string
 }
 export interface UserInfoRes {
   loggedIn: boolean

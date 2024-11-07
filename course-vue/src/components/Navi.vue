@@ -43,9 +43,12 @@
                     </el-dropdown-menu>
                   </template>
                 </el-dropdown>
-                <div class="section5">
+                <div class="section5" @click="getTestUser()">
                   <div class="shuxinImage"></div>
-                  <div class="shuaxin">刷新</div>
+                  <div class="shuaxin">
+                    添加<br>
+                    测试用户
+                  </div>
                 </div>
 
                 <div class="section6" @click="logout()">
@@ -160,6 +163,8 @@ import { useAppStore } from '@/stores/app'
 import router from '@/router'
 import { type MenuInfo, type UserInfoRes } from '@/models/general'
 import { formatTime } from '@/tools/comMethod'
+import { getTestUserToken } from '@/services/userServ'
+import { message } from '@/tools/messageBox'
 // vue3中新增了 defineComponent ，它并没有实现任何的逻辑，只是把接收的 Object 直接返回，它的存在就是完全为了服务 TypeScript 而存在的。
 // 我都知道普通的组件就是一个普通的对象，既然是一个普通的对象，那自然就不会获得自动的提示，
 export default defineComponent({
@@ -175,20 +180,8 @@ export default defineComponent({
   }),
   //生命周期函数  mounted() 在实例挂载之后调用， 设置定期刷新控制台时间
   mounted() {
-    this.userList=[]
-  let user1 ,user2,user3
-    user1=localStorage.getItem("testUserRoleAdmin")
-    user2=localStorage.getItem("testUserRoleStudent")
-    user3=localStorage.getItem("testUserRoleTeacher")
-    if(user1!=null){
-      this.userList.push(JSON.parse(user1))
-    }
-    if(user2!=null){
-      this.userList.push(JSON.parse(user2))
-    }
-    if(user3!=null){
-      this.userList.push(JSON.parse(user3))
-    }
+    let data=localStorage.getItem("testUsers") as string
+    this.userList=JSON.parse(data)
     if (this.timer) {
       clearInterval(this.timer)
     } else {
@@ -207,9 +200,18 @@ export default defineComponent({
     ...mapState(useAppStore, ['userInfo'])
   },
   methods: {
+    async getTestUser() {
+      getTestUserToken().then((res) => {
+        console.log(res)
+        this.userList = res
+        message(this,"获取成功")
+      }).catch((err) => {
+        console.log(err)
+        message(this,"获取失败")
+      })
+    },
     async handleCommand(id : number) {
-      console.log(id)
-      console.log("切换用户")
+
       useAppStore().userInfo.username=this.userList[id-1].username
       useAppStore().userInfo.perName=this.userList[id-1].perName
       useAppStore().userInfo.roles=this.userList[id-1].roles
@@ -217,7 +219,6 @@ export default defineComponent({
       useAppStore().userInfo.id=this.userList[id-1].id
       useAppStore().userInfo.loggedIn=true
       console.log(useAppStore().userInfo)
-
      //router.push('/MainPage')
       await useAppStore().setNavi()
       window.location.reload()
@@ -225,8 +226,11 @@ export default defineComponent({
     },
     // 退出登录
     logout() {
+
       const store = useAppStore()
       store.logout()
+      localStorage.clear()
+      this.userList=[]
       router.push('/Login')
     },
     // 获取二级菜单
