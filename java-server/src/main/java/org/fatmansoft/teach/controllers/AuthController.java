@@ -27,11 +27,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import org.fatmansoft.teach.payload.request.LoginRequest;
 import org.fatmansoft.teach.payload.request.SignupRequest;
@@ -102,21 +98,22 @@ public class AuthController {
             user.setLoginCount(count);
             userRepository.save(user);
         }
-        if (op.get().getUserType().getId().equals(1)){
-            JwtResponse jwtResponse[] =new JwtResponse[3];
-            String s=jwtUtils.generateJwtTokenAdmin("admin");
-            String s1=jwtUtils.generateJwtTokenAdmin("2022030001");
-            String s2=jwtUtils.generateJwtTokenAdmin("200799013517");
-            jwtResponse[0] =new JwtResponse(s,1,"admin","管理员","ADMIN");
-            jwtResponse[1]=new JwtResponse(s1,2,"2022030001","杨平","STUDENT");
-            jwtResponse[2]=new JwtResponse(s2,3,"200799013517","李学庆","TEACHER");
-            return ResponseEntity.ok(jwtResponse);
-        }
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getPerName(),
                 roles.get(0)));
+    }
+    @PostMapping("/testUserToken")
+    public ResponseEntity<?>getTestUserToken() {
+        JwtResponse[] jwtResponse = new JwtResponse[3];
+        String s = jwtUtils.generateJwtTokenAdmin("admin");
+        String s1 = jwtUtils.generateJwtTokenAdmin("2022030001");
+        String s2 = jwtUtils.generateJwtTokenAdmin("200799013517");
+        jwtResponse[0] = new JwtResponse(s, 1, "admin", "管理员", "ADMIN");
+        jwtResponse[1] = new JwtResponse(s1, 2, "2022030001", "杨平", "STUDENT");
+        jwtResponse[2] = new JwtResponse(s2, 3, "200799013517", "李学庆", "TEACHER");
+        return ResponseEntity.ok(jwtResponse);
     }
 
     /**

@@ -82,6 +82,14 @@ export interface UserInfo {
   jwtToken: string
   id: number
   roles: string
+}
+export interface UserInfoRes {
+  loggedIn: boolean
+  username: string
+  perName: string
+  accessToken: string
+  id: number
+  roles: string
   password: string
 }
 //用于Chart数据信息的定义

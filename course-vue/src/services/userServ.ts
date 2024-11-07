@@ -1,4 +1,6 @@
 import axios from 'axios'
+import {generalRequest} from '@/services/genServ'
+import { message } from '@/tools/messageBox'
 
 export async function userLoginReq(username: string, password: string): Promise<any> {
   try {
@@ -21,4 +23,17 @@ export async function userLoginReq(username: string, password: string): Promise<
     console.log(error)
     throw error
   }
+}
+//获取测试用户接口，切换用户需要用户已登陆，但测试环境只允许一个账号默认登录，故才用这个办法
+export async function getTestUserToken() :Promise<any> {
+  try {
+    const res = await generalRequest('/api/auth/testUserToken', null)
+    localStorage.setItem('testUsers',JSON.stringify(res) )
+    return res
+  }
+  catch (error: any) {
+    console.log(error)
+    return error
+  }
+
 }

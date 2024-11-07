@@ -1,4 +1,4 @@
-<template>
+<template xmlns="">
   <div style="height: 100%">
     <!-- 当登录成功后显示此DIV -->
     <div
@@ -29,9 +29,26 @@
                 </div>
                 <div class="section4 flex-col"></div>
 
-                <div class="section5">
+                <el-dropdown  class="section4-1">
+              <span class="el-dropdown-link">
+                    切换用户<el-icon class="el-icon--right"><arrow-down/></el-icon>
+                </span>
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item v-for="user in userList" :key="user.id" @click="handleCommand(user.id)">
+                        {{user.perName}}
+
+                      </el-dropdown-item>
+
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
+                <div class="section5" @click="getTestUser()">
                   <div class="shuxinImage"></div>
-                  <div class="shuaxin">刷新</div>
+                  <div class="shuaxin">
+                    添加<br>
+                    测试用户
+                  </div>
                 </div>
 
                 <div class="section6" @click="logout()">
@@ -144,13 +161,16 @@ import { mapState } from 'pinia'
 import { defineComponent } from 'vue'
 import { useAppStore } from '@/stores/app'
 import router from '@/router'
-import { type MenuInfo } from '@/models/general'
+import { type MenuInfo, type UserInfoRes } from '@/models/general'
 import { formatTime } from '@/tools/comMethod'
+import { getTestUserToken } from '@/services/userServ'
+import { message } from '@/tools/messageBox'
 // vue3中新增了 defineComponent ，它并没有实现任何的逻辑，只是把接收的 Object 直接返回，它的存在就是完全为了服务 TypeScript 而存在的。
 // 我都知道普通的组件就是一个普通的对象，既然是一个普通的对象，那自然就不会获得自动的提示，
 export default defineComponent({
   // templte中使用的数据
   data: () => ({
+    userList: [] as UserInfoRes[],
     isCollapse: false,
     leList: [] as MenuInfo[],
     funId: '',
@@ -160,6 +180,8 @@ export default defineComponent({
   }),
   //生命周期函数  mounted() 在实例挂载之后调用， 设置定期刷新控制台时间
   mounted() {
+    let data=localStorage.getItem("testUsers") as string
+    this.userList=JSON.parse(data)
     if (this.timer) {
       clearInterval(this.timer)
     } else {
@@ -178,10 +200,37 @@ export default defineComponent({
     ...mapState(useAppStore, ['userInfo'])
   },
   methods: {
+    async getTestUser() {
+      getTestUserToken().then((res) => {
+        console.log(res)
+        this.userList = res
+        message(this,"获取成功")
+      }).catch((err) => {
+        console.log(err)
+        message(this,"获取失败")
+      })
+    },
+    async handleCommand(id : number) {
+
+      useAppStore().userInfo.username=this.userList[id-1].username
+      useAppStore().userInfo.perName=this.userList[id-1].perName
+      useAppStore().userInfo.roles=this.userList[id-1].roles
+      useAppStore().userInfo.jwtToken=this.userList[id-1].accessToken
+      useAppStore().userInfo.id=this.userList[id-1].id
+      useAppStore().userInfo.loggedIn=true
+      console.log(useAppStore().userInfo)
+     //router.push('/MainPage')
+      await useAppStore().setNavi()
+      window.location.reload()
+
+    },
     // 退出登录
     logout() {
+
       const store = useAppStore()
       store.logout()
+      localStorage.clear()
+      this.userList=[]
       router.push('/Login')
     },
     // 获取二级菜单
@@ -219,6 +268,11 @@ export default defineComponent({
 </script>
 <!-- 这个是系统主页面的样式，同学可以根据自己的喜好修改 -->
 <style lang="scss" scoped>
+.section4-1{
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
 .el-menu-item.is-active {
   background-color: rgb(105, 74, 74) !important;
 }
@@ -341,7 +395,6 @@ export default defineComponent({
   cursor: pointer;
   margin-top: 23px;
   margin-left: 18px;
-  background: url('/leftright.png');
   width: 18px;
   height: 18px;
 }
