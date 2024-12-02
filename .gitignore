@@ -1,0 +1,5 @@
+
+/.idea
+*.log
+/java-server/.idea
+data.db

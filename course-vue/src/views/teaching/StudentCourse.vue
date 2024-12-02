@@ -4,6 +4,12 @@
         <div class="blue_column"></div>
         <div class="base_title">课程管理</div>
       </div>
+      <div class="test-modal">
+        <a-button @click="handleClick">Open Modal</a-button>
+        <a-modal v-model:visible="visible" @ok="handleOk" @cancel="handleCancel" :footer="false" :fullscreen="true">
+          <student-course></student-course>
+        </a-modal>
+      </div>
   
       <div class="base_query_oneLine">
         <div class="query_right">
@@ -63,11 +69,14 @@
   import { message, messageConform } from '@/tools/messageBox'
   import { getTeacherList } from '@/services/personServ'
   import { getDialog } from '@/tools/comMethod'
+  import studentCourse from '@/views/person/StudentTable.vue'
 import { useAppStore } from '@/stores/app'
 import { userInfo } from 'os'
   export default defineComponent({
+    components: { studentCourse },
     // 双向绑定数据
     data: () => ({
+      visible:false,
       numName: '',
       courseList: [] as CourseItem[],
       teacherList:[] as TeacherItem[],
@@ -84,6 +93,15 @@ import { userInfo } from 'os'
   
     methods: {
       //设置课程选择列表
+      handleClick(){
+        this.visible=true
+      },
+      handleOk(){
+        this.visible=false
+      },
+      handleCancel(){
+        this.visible=false
+      },
       makeSelectCourseList() {
         this.courseSelectList = []
         for (let i = 0; i < this.courseList.length; i++) {
