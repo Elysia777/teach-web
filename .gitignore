@@ -1,10 +1,6 @@
-
-
-
-/java-server/logs
+./java-server/logs
 *.log
-/java-server/.idea
+./java-server/.idea
 data.db
-java-server/.DS_Store
-/java-server/.idea
+./java-server/.DS_Store
 .DS_Store
