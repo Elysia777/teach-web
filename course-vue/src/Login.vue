@@ -220,6 +220,9 @@ export default defineComponent({
   }),
   //页面加载前执行的函数 设置初始为登录界面
   beforeMount() {
+    if (useAppStore().userInfo.id) {
+      router.push('/MainPage')
+    }
     this.pageType = 1
   },
   //页面加载后执行的函数， 执行性一次， 从后台请求验证码，从浏览器获取上次登录的用户信息作为用户和密码的初始值
