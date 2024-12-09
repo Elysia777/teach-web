@@ -92,9 +92,9 @@ public class ScoreController {
         }
         if(s == null) {
             s = new Score();
-            s.setStudent(studentRepository.findById(studentId).get());
-            s.setCourse(courseRepository.findById(courseId).get());
         }
+        s.setStudent(studentRepository.findById(studentId).get());
+        s.setCourse(courseRepository.findById(courseId).get());
         s.setMark(mark);
         scoreRepository.save(s);
         return CommonMethod.getReturnMessageOK();
@@ -102,7 +102,8 @@ public class ScoreController {
     @PostMapping("/scoreDelete")
     public DataResponse scoreDelete(@Valid @RequestBody DataRequest dataRequest) {
         Integer scoreId = dataRequest.getInteger("scoreId");
-        Optional<Score> op;
+
+         Optional<Score> op;
         Score s = null;
         if(scoreId != null) {
             op= scoreRepository.findById(scoreId);

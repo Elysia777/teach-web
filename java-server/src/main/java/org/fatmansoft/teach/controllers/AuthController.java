@@ -112,7 +112,7 @@ public class AuthController {
         String s2 = jwtUtils.generateJwtTokenAdmin("200799013517");
         jwtResponse[0] = new JwtResponse(s, 1, "admin", "管理员", "ADMIN");
         jwtResponse[1] = new JwtResponse(s1, 2, "2022030001", "杨平", "STUDENT");
-        jwtResponse[2] = new JwtResponse(s2, 3, "200799013517", "李学庆", "TEACHER");
+        jwtResponse[2] = new JwtResponse(s2, 4, "200799013517", "李学庆", "TEACHER");
         return ResponseEntity.ok(jwtResponse);
     }
 
