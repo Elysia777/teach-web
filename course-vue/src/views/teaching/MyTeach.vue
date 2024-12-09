@@ -20,6 +20,7 @@
             <td>学分</td>
             <td>材料路径</td>
             <td>前序课</td>
+            <td>查看学生成绩</td>
           </tr>
           <tr v-for="item in courseList" :key="item.courseId">
             <td>{{ item.num }}</td>
@@ -27,6 +28,19 @@
             <td>{{ item.credit }}</td>
             <td>{{ item.coursePath }}</td>
             <td>{{ item.preCourse }}</td>
+            <td> 
+              <el-button plain @click="visible = true">
+                查看
+              </el-button>
+
+              <el-dialog
+                v-model="visible"
+                title="Tips"
+                :fullscreen="true"
+              >
+                <score-table></score-table>
+              </el-dialog>
+            </td>
           </tr>
         </table>
       </div>
@@ -42,14 +56,17 @@
   import { getDialog } from '@/tools/comMethod'
 import { useAppStore } from '@/stores/app'
 import { userInfo } from 'os'
+ import ScoreTable from '@/views/teaching/ScoreTable.vue'
   export default defineComponent({
+    components: { ScoreTable },
     // 双向绑定数据
     data: () => ({
       numName: '',
       courseList: [] as CourseItem[],
       teacherList:[] as TeacherItem[],
       deleteId: -1,
-      form: {} as CourseItem
+      form: {} as CourseItem,
+      visible:false,
     }),
     //初始加载一次,直接获取教师列表
     created() {
@@ -57,11 +74,33 @@ import { userInfo } from 'os'
     },
   
     methods: {
-     
+      handleClose(done: () => void){
+         messageConform('Are you sure to close this dialog?')
+          .then(() => {
+            done()
+          })
+          .catch(() => {
+            // catch error
+          })
+      },
+      handleClick(){
+        this.visible=true
+      },
+      handleOk(){
+        this.visible=false
+      },
+      handleCancel(){
+        this.visible=false
+      },
       //查询课程列表
       async query() {
         this.courseList = await getTeacherCourseList(useAppStore().userInfo.id,this.numName)
       },
+      async deleteItem(item:CourseItem) {
+      },
+      async checkItem(item:CourseItem){
+        
+      }
     }
   })
   </script>

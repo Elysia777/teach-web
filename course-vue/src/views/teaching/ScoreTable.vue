@@ -2,11 +2,11 @@
   <div class="base_form">
     <div class="base_header">
       <div class="blue_column"></div>
-      <div class="base_title">课程管理</div>
+      <div class="base_title">成绩管理</div>
     </div>
 
     <div class="base_query_oneLine">
-      <div class="query_left">
+      <div class="query_left"> 
         <button class="commButton" @click="addItem()">添加</button>
       </div>
       <div class="query_right">
@@ -48,24 +48,24 @@
           <td>{{ item.credit }}</td>
           <td>{{ item.mark }}</td>
           <td>
-            <button class="table_edit_button" @click="editItem(item)">编辑</button>
-            <button class="table_delete_button" @click="deleteItem(item.scoreId)">删除</button>
+            <el-button class="table_edit_button" @click="editItem(item)">编辑</el-button>
+            <el-button class="table_delete_button" @click="deleteItem(item.scoreId)">删除</el-button>
           </td>
         </tr>
       </table>
     </div>
   </div>
   <!-- 成绩修改对话框显示 -->
-  <dialog
+  <el-dialog
     id="favDialog"
     onclose="close()"
-    style="position: absolute; top: 300px; left: 300px; width: 300px; height: 210px"
+    v-model="visible"
   >
-    <div class="base_title">成绩添加修改对话框</div>
+    <div class="base_title" align="center">成绩添加修改对话框</div>
     <div class="dialog-div" style="margin-top: 5px">
       <table class="dialog-content">
         <tr>
-          <td colspan="1" style="text-align: right">学号姓名</td>
+          <td colspan="1" style="text-align: center">学号姓名</td>
           <td colspan="1">
             <select class="commInput" v-model="editedItem.studentId">
               <option value="0">请选择...</option>
@@ -76,7 +76,7 @@
           </td>
         </tr>
         <tr>
-          <td colspan="1" style="text-align: right">课程名</td>
+          <td colspan="1" style="text-align: center">课程名</td>
           <td colspan="1">
             <select class="commInput" v-model="editedItem.courseId">
               <option value="0">请选择...</option>
@@ -94,13 +94,13 @@
         </tr>
         <tr>
           <td colspan="2">
-            <button class="commButton" @click="close()" style="margin-right: 30px">取消</button>
-            <button class="commButton" @click="confirm()">确认</button>
+            <el-button class="commButton" @click="close()" >取消</el-button>
+            <el-button class="commButton" @click="confirm()">确认</el-button>
           </td>
         </tr>
       </table>
     </div>
-  </dialog>
+  </el-dialog>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -121,7 +121,8 @@ export default defineComponent({
     editedItem: {} as ScoreItem,
     studentList: [] as OptionItem[],
     courseList: [] as OptionItem[],
-    deleteId: -1
+    deleteId: -1,
+    visible :false
   }),
   computed: {},
   created() {
@@ -143,18 +144,18 @@ export default defineComponent({
     addItem() {
       this.editedItem = {} as ScoreItem
       const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      dialog.show()
+      this.visible=true
     },
     // 编辑成绩,显示成绩修改对画框
     editItem(item: ScoreItem) {
       this.editedItem = item
       const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      dialog.show()
+      this.visible=true
     },
     // 关闭成绩修改对话框
     close() {
       const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      dialog.close()
+      this.visible=false
     },
     // 确认成绩修改对话框
     async confirm() {
@@ -189,3 +190,11 @@ export default defineComponent({
   }
 })
 </script>
+<style>
+.dialog-content{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+</style>

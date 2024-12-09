@@ -2,7 +2,7 @@
     <div class="base_form">
       <div class="base_header">
         <div class="blue_column"></div>
-        <div class="base_title">课程管理</div>
+        <div class="base_title">我的课程</div>
       </div>
   
       <div class="base_query_oneLine">

@@ -35,7 +35,7 @@
                 </span>
                   <template #dropdown>
                     <el-dropdown-menu>
-                      <el-dropdown-item v-for="user in userList" :key="user.id" @click="handleCommand(user.id)">
+                      <el-dropdown-item v-for="(user,index) in userList" :key="user.id" @click="handleCommand(index+1)">
                         {{user.perName}}
 
                       </el-dropdown-item>
@@ -539,8 +539,10 @@ export default defineComponent({
 
 .shuxinImage {
   width: 16px;
-  height: 14px;
-  background: url('/refresh.png');
+  height: 17px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/adduser.png');
   margin-left: 3px;
 }
 .tuichuImage {
