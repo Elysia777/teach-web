@@ -30,23 +30,36 @@
     <a-table :columns="columns" :data="scoreList" class="score_table">
       <template #mark="{ record }">
         <span v-if="!isEdit[record.scoreId]">{{ record.mark }}</span>
-        <a-input-number v-else v-model="record.mark" :style="{ width: '80px' }" :max="100" />
+        <a-input-number
+          v-else
+          v-model="record.mark"
+          :style="{ width: '80px' }"
+          :max="100"
+          :min="0"
+        />
       </template>
       <template #operation="{ record }">
-        <a-button v-if="!isEdit[record.scoreId]" class="table_edit_button" @click="editItem(record.scoreId)">编辑</a-button>
         <a-button
-          v-if="isEdit[record.scoreId]"
-          @click="isEdit[record.scoreId]=false"
+          v-if="!isEdit[record.scoreId]"
           class="table_edit_button"
-        >取消</a-button
+          @click="editItem(record.scoreId)"
+          >编辑</a-button
         >
         <a-button
           v-if="isEdit[record.scoreId]"
-          @click="save(record)"
+          @click="isEdit[record.scoreId] = false"
           class="table_edit_button"
+          >取消</a-button
+        >
+        <a-button v-if="isEdit[record.scoreId]" @click="save(record)" class="table_edit_button"
           >保存</a-button
         >
-        <a-button v-if="!isEdit[record.scoreId]" class="table_delete_button" @click="deleteItem(record.scoreId)">删除</a-button>
+        <a-button
+          v-if="!isEdit[record.scoreId]"
+          class="table_delete_button"
+          @click="deleteItem(record.scoreId)"
+          >删除</a-button
+        >
       </template>
     </a-table>
   </div>
@@ -84,6 +97,8 @@
       </a-form-item>
       <a-form-item field="mark" label="成绩">
         <a-input-number
+          :max="100"
+          :min="0"
           v-model="form.mark"
           :style="{ width: '320px' }"
           placeholder="please enter your post..."
@@ -182,12 +197,7 @@ export default defineComponent({
     //TODO：函数复用
     async save(record: ScoreItem) {
       this.isEdit[record.scoreId] = false
-      const res = await scoreSave(
-        record.scoreId,
-        record.studentId,
-        record.courseId,
-        record.mark
-      )
+      const res = await scoreSave(record.scoreId, record.studentId, record.courseId, record.mark)
       if (res.code == 0) {
         message(this, '保存成功')
         this.query()
