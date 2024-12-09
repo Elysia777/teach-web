@@ -1,4 +1,4 @@
-import { ElMessage, ElMessageBox } from 'element-plus/lib/components/index.js'
+import { ElMessage, ElMessageBox } from 'element-plus'
 //消息提示，用户页面显示提示显示
 export function message(self: any, msg: string) {
   self.$message({
