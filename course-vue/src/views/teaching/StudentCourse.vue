@@ -10,7 +10,7 @@
           <student-course></student-course>
         </a-modal>
       </div>
-  
+
       <div class="base_query_oneLine">
         <div class="query_right">
           <span style="margin-top: 5px">课程号或课程名</span>
