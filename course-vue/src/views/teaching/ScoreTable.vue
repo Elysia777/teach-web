@@ -27,39 +27,67 @@
         <button style="margin-left: 5px" class="commButton" @click="query()">查询</button>
       </div>
     </div>
-    <a-table :columns="columns" :data="scoreList">
-      <template #view="{record}">
-        <a-button class="table_edit_button" @click="editItem(record)">编辑</a-button>
-        <a-button class="table_delete_button" @click="deleteItem(record.scoreId)">删除</a-button>
-
+    <a-table :columns="columns" :data="scoreList" class="score_table">
+      <template #mark="{ record }">
+        <span v-if="!isEdit[record.scoreId]">{{ record.mark }}</span>
+        <a-input-number v-else v-model="record.mark" :style="{ width: '80px' }" :max="100" />
+      </template>
+      <template #operation="{ record }">
+        <a-button v-if="!isEdit[record.scoreId]" class="table_edit_button" @click="editItem(record.scoreId)">编辑</a-button>
+        <a-button
+          v-if="isEdit[record.scoreId]"
+          @click="isEdit[record.scoreId]=false"
+          class="table_edit_button"
+        >取消</a-button
+        >
+        <a-button
+          v-if="isEdit[record.scoreId]"
+          @click="save(record)"
+          class="table_edit_button"
+          >保存</a-button
+        >
+        <a-button v-if="!isEdit[record.scoreId]" class="table_delete_button" @click="deleteItem(record.scoreId)">删除</a-button>
       </template>
     </a-table>
   </div>
   <!-- 成绩修改对话框显示 -->
-  <a-modal body-class="score_modal"
-           onclose="close()"
-           v-model:visible="addVisible"
-           title="成绩添加修改对话框"
-           @cancel="close()"
-           @ok="confirm()"
+  <a-modal
+    body-class="score_modal"
+    onclose="close()"
+    v-model:visible="addVisible"
+    title="成绩添加修改对话框"
+    @cancel="close()"
+    @ok="confirm()"
   >
     <a-form :model="form">
       <a-form-item field="name" label="学号姓名">
-        <a-select v-model="form.studentId" :style="{width:'320px'}" placeholder="Please select ...">
-          <a-option v-for="item in studentList" :key="item.id" :value="item.id ">
-            {{item.title}}
+        <a-select
+          v-model="form.studentId"
+          :style="{ width: '320px' }"
+          placeholder="Please select ..."
+        >
+          <a-option v-for="item in studentList" :key="item.id" :value="item.id">
+            {{ item.title }}
           </a-option>
         </a-select>
       </a-form-item>
       <a-form-item field="post" label="课程名">
-        <a-select v-model="form.courseId" :style="{width:'320px'}" placeholder="Please select ...">
-          <a-option v-for="item in courseList" :key="item.id" :value="item.id ">
-            {{item.title}}
+        <a-select
+          v-model="form.courseId"
+          :style="{ width: '320px' }"
+          placeholder="Please select ..."
+        >
+          <a-option v-for="item in courseList" :key="item.id" :value="item.id">
+            {{ item.title }}
           </a-option>
         </a-select>
       </a-form-item>
       <a-form-item field="mark" label="成绩">
-        <a-input-number v-model="form.mark" :style="{width:'320px'}" placeholder="please enter your post..." />
+        <a-input-number
+          v-model="form.mark"
+          :style="{ width: '320px' }"
+          placeholder="please enter your post..."
+        />
       </a-form-item>
     </a-form>
   </a-modal>
@@ -104,14 +132,14 @@ export default defineComponent({
       },
       {
         title: '成绩',
-        dataIndex: 'mark'
+        slotName: 'mark'
       },
       {
         title: '操作',
-        slotName: 'view'
+        slotName: 'operation'
       }
     ],
-    form : {} as ScoreItem,
+    form: {} as ScoreItem,
     scoreList: [] as ScoreItem[],
     studentId: null,
     courseId: null,
@@ -119,7 +147,8 @@ export default defineComponent({
     studentList: [] as OptionItem[],
     courseList: [] as OptionItem[],
     deleteId: -1,
-    addVisible: false
+    addVisible: false,
+    isEdit: [] as boolean[]
   }),
   computed: {},
   created() {
@@ -146,10 +175,25 @@ export default defineComponent({
       this.addVisible = true
     },
     // 编辑成绩,显示成绩修改对画框
-    editItem(item: ScoreItem) {
-      this.editedItem.courseId = item.courseId
-
-      this.addVisible = true
+    editItem(recordID: number) {
+      this.isEdit[recordID] = true
+    },
+    // 保存成绩
+    //TODO：函数复用
+    async save(record: ScoreItem) {
+      this.isEdit[record.scoreId] = false
+      const res = await scoreSave(
+        record.scoreId,
+        record.studentId,
+        record.courseId,
+        record.mark
+      )
+      if (res.code == 0) {
+        message(this, '保存成功')
+        this.query()
+      } else {
+        message(this, res.msg)
+      }
     },
     // 关闭成绩修改对话框
     close() {
@@ -189,11 +233,14 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.score_modal{
+.score_modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.score_table {
+  margin-top: 20px;
+  padding: 10px;
+}
 </style>
