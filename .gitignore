@@ -1,4 +1,7 @@
 
-/java-server/logs
+
+
 /java-server/logs
 *.log
+/java-server/.idea
+data.db
