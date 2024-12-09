@@ -6,7 +6,7 @@
     </div>
 
     <div class="base_query_oneLine">
-      <div class="query_left"> 
+      <div class="query_left">
         <button class="commButton" @click="addItem()">添加</button>
       </div>
       <div class="query_right">
@@ -27,80 +27,42 @@
         <button style="margin-left: 5px" class="commButton" @click="query()">查询</button>
       </div>
     </div>
-    <div class="table_center" style="margin-top: 5px">
-      <table class="content">
-        <tr class="table_th">
-          <td>学号</td>
-          <td>姓名</td>
-          <td>班级</td>
-          <td>课程号</td>
-          <td>课程名</td>
-          <td>学分</td>
-          <td>成绩</td>
-          <td>操作</td>
-        </tr>
-        <tr v-for="item in scoreList" :key="item.scoreId">
-          <td>{{ item.studentNum }}</td>
-          <td>{{ item.studentName }}</td>
-          <td>{{ item.className }}</td>
-          <td>{{ item.courseNum }}</td>
-          <td>{{ item.courseName }}</td>
-          <td>{{ item.credit }}</td>
-          <td>{{ item.mark }}</td>
-          <td>
-            <el-button class="table_edit_button" @click="editItem(item)">编辑</el-button>
-            <el-button class="table_delete_button" @click="deleteItem(item.scoreId)">删除</el-button>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <a-table :columns="columns" :data="scoreList">
+      <template #view="{record}">
+        <a-button class="table_edit_button" @click="editItem(record)">编辑</a-button>
+        <a-button class="table_delete_button" @click="deleteItem(record.scoreId)">删除</a-button>
+
+      </template>
+    </a-table>
   </div>
   <!-- 成绩修改对话框显示 -->
-  <el-dialog
-    id="favDialog"
-    onclose="close()"
-    v-model="visible"
+  <a-modal body-class="score_modal"
+           onclose="close()"
+           v-model:visible="addVisible"
+           title="成绩添加修改对话框"
+           @cancel="close()"
+           @ok="confirm()"
   >
-    <div class="base_title" align="center">成绩添加修改对话框</div>
-    <div class="dialog-div" style="margin-top: 5px">
-      <table class="dialog-content">
-        <tr>
-          <td colspan="1" style="text-align: center">学号姓名</td>
-          <td colspan="1">
-            <select class="commInput" v-model="editedItem.studentId">
-              <option value="0">请选择...</option>
-              <option v-for="item in studentList" :key="item.id" :value="item.id">
-                {{ item.title }}
-              </option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: center">课程名</td>
-          <td colspan="1">
-            <select class="commInput" v-model="editedItem.courseId">
-              <option value="0">请选择...</option>
-              <option v-for="item in courseList" :key="item.id" :value="item.id">
-                {{ item.title }}
-              </option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">成绩</td>
-          <td colspan="1">
-            <input v-model="editedItem.mark" class="commInput" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <el-button class="commButton" @click="close()" >取消</el-button>
-            <el-button class="commButton" @click="confirm()">确认</el-button>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </el-dialog>
+    <a-form :model="form">
+      <a-form-item field="name" label="学号姓名">
+        <a-select v-model="form.studentId" :style="{width:'320px'}" placeholder="Please select ...">
+          <a-option v-for="item in studentList" :key="item.id" :value="item.id ">
+            {{item.title}}
+          </a-option>
+        </a-select>
+      </a-form-item>
+      <a-form-item field="post" label="课程名">
+        <a-select v-model="form.courseId" :style="{width:'320px'}" placeholder="Please select ...">
+          <a-option v-for="item in courseList" :key="item.id" :value="item.id ">
+            {{item.title}}
+          </a-option>
+        </a-select>
+      </a-form-item>
+      <a-form-item field="mark" label="成绩">
+        <a-input-number v-model="form.mark" :style="{width:'320px'}" placeholder="please enter your post..." />
+      </a-form-item>
+    </a-form>
+  </a-modal>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -115,6 +77,41 @@ import { type OptionItem, type ScoreItem } from '@/models/general'
 import { message, messageConform } from '@/tools/messageBox'
 export default defineComponent({
   data: () => ({
+    columns: [
+      {
+        title: '学号',
+        dataIndex: 'studentNum'
+      },
+      {
+        title: '姓名',
+        dataIndex: 'studentName'
+      },
+      {
+        title: '班级',
+        dataIndex: 'className'
+      },
+      {
+        title: '课程号',
+        dataIndex: 'courseNum'
+      },
+      {
+        title: '课程名',
+        dataIndex: 'courseName'
+      },
+      {
+        title: '学分',
+        dataIndex: 'credit'
+      },
+      {
+        title: '成绩',
+        dataIndex: 'mark'
+      },
+      {
+        title: '操作',
+        slotName: 'view'
+      }
+    ],
+    form : {} as ScoreItem,
     scoreList: [] as ScoreItem[],
     studentId: null,
     courseId: null,
@@ -122,7 +119,7 @@ export default defineComponent({
     studentList: [] as OptionItem[],
     courseList: [] as OptionItem[],
     deleteId: -1,
-    visible :false
+    addVisible: false
   }),
   computed: {},
   created() {
@@ -130,6 +127,9 @@ export default defineComponent({
   },
 
   methods: {
+    handleSubmit() {
+      console.log(this.form)
+    },
     // 初始化,获取学生选择项列表和课程选择项列表
     async initialize() {
       this.scoreList = await getScoreList(this.studentId, this.courseId)
@@ -143,28 +143,26 @@ export default defineComponent({
     // 添加成绩,显示成绩修改对画框
     addItem() {
       this.editedItem = {} as ScoreItem
-      const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      this.visible=true
+      this.addVisible = true
     },
     // 编辑成绩,显示成绩修改对画框
     editItem(item: ScoreItem) {
-      this.editedItem = item
-      const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      this.visible=true
+      this.editedItem.courseId = item.courseId
+
+      this.addVisible = true
     },
     // 关闭成绩修改对话框
     close() {
-      const dialog = document.getElementById('favDialog') as HTMLDialogElement
-      this.visible=false
+      this.addVisible = false
     },
     // 确认成绩修改对话框
     async confirm() {
       this.close()
       const res = await scoreSave(
-        this.editedItem.scoreId,
-        this.editedItem.studentId,
-        this.editedItem.courseId,
-        this.editedItem.mark
+        this.form.scoreId,
+        this.form.studentId,
+        this.form.courseId,
+        this.form.mark
       )
       if (res.code == 0) {
         message(this, '保存成功')
@@ -190,11 +188,12 @@ export default defineComponent({
   }
 })
 </script>
-<style>
-.dialog-content{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+<style lang="scss">
+.score_modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 </style>
