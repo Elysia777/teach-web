@@ -5,3 +5,5 @@
 *.log
 /java-server/.idea
 data.db
+java-server/.DS_Store
+/java-server/.idea
