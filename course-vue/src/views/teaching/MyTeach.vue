@@ -17,7 +17,7 @@
       </template>
     </a-table>
     <a-modal v-model:visible="visible" @ok="handleOk" @cancel="handleCancel" :fullscreen="true">
-      <score-table></score-table>
+      <score-table :chosen-course-id="4"></score-table>
     </a-modal>
   </div>
 </template>

@@ -63,7 +63,6 @@
       </template>
     </a-table>
   </div>
-  <!-- 成绩修改对话框显示 -->
   <a-modal
     body-class="score_modal"
     onclose="close()"
@@ -169,14 +168,17 @@ export default defineComponent({
   created() {
     this.initialize()
   },
-
+  props: {
+    chosenCourseId: {
+      type: [Number, null],
+      default: null,
+    }
+  },
   methods: {
-    handleSubmit() {
-      console.log(this.form)
-    },
+
     // 初始化,获取学生选择项列表和课程选择项列表
     async initialize() {
-      this.scoreList = await getScoreList(this.studentId, this.courseId)
+      this.scoreList = await getScoreList(this.studentId, this.chosenCourseId)
       this.studentList = await getStudentItemOptionList()
       this.courseList = await getCourseItemOptionList()
     },
