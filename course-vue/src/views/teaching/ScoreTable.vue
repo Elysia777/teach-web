@@ -184,6 +184,10 @@ export default defineComponent({
     },
     // 查询
     async query() {
+      if (this.chosenCourseId){
+        this.scoreList = await getScoreList(this.studentId, this.chosenCourseId)
+        return
+      }
       this.scoreList = await getScoreList(this.studentId, this.courseId)
     },
     // 添加成绩,显示成绩修改对画框
