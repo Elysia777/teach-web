@@ -12,12 +12,12 @@
       </div>
     </div>
     <a-table :columns="columns" :data="courseList">
-      <template #view="{}">
-        <a-button @click="visible = true"> 查看 </a-button>
+      <template #view="{record}">
+        <a-button @click="checkScoreTable(record.courseId)"> 查看 </a-button>
       </template>
     </a-table>
     <a-modal v-model:visible="visible" @ok="handleOk" @cancel="handleCancel" :fullscreen="true">
-      <score-table :chosen-course-id="4"></score-table>
+      <score-table :chosen-course-id="courseID as number"></score-table>
     </a-modal>
   </div>
 </template>
@@ -63,7 +63,9 @@ export default defineComponent({
     teacherList: [] as TeacherItem[],
     deleteId: -1,
     form: {} as CourseItem,
-    visible: false
+    visible: false,
+    courseID:1 as Number,
+
   }),
   //初始加载一次,直接获取教师列表
   created() {
@@ -73,7 +75,11 @@ export default defineComponent({
 
   methods: {
     //查询课程列表
+    checkScoreTable(courseID:string){
+      this.visible=true
+      this.courseID=parseInt(courseID)
 
+    },
     handleClick(){
       this.visible = true;
     },

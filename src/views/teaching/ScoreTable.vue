@@ -29,11 +29,11 @@
     </div>
     <a-table :columns="columns" :data="scoreList" class="score_table">
       <template #mark="{ record }">
-        <span v-if="!isEdit[record.scoreId]">{{ record.mark }}</span>
+        <span v-if="!isEdit[record.scoreId]">{{ record.mark}}</span>
         <a-input-number
           v-else
-          v-model="record.mark"
           :style="{ width: '80px' }"
+          @change="(value) => (mark = (value as number))"
           :max="100"
           :min="0"
         />
@@ -162,7 +162,8 @@ export default defineComponent({
     courseList: [] as OptionItem[],
     deleteId: -1,
     addVisible: false,
-    isEdit: [] as boolean[]
+    isEdit: [] as boolean[],
+    mark: 0
   }),
   computed: {},
   created() {
@@ -203,7 +204,7 @@ export default defineComponent({
     //TODO：函数复用
     async save(record: ScoreItem) {
       this.isEdit[record.scoreId] = false
-      const res = await scoreSave(record.scoreId, record.studentId, record.courseId, record.mark)
+      const res = await scoreSave(record.scoreId, record.studentId, record.courseId, this.mark)
       if (res.code == 0) {
         message(this, '保存成功')
         this.query()
@@ -244,6 +245,12 @@ export default defineComponent({
       } else {
         message(this, res.msg)
       }
+    }
+  },
+  watch:{
+    chosenCourseId(newVal){
+      console.log(newVal)
+      this.initialize()
     }
   }
 })
