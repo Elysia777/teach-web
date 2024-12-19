@@ -30,7 +30,7 @@
                 <div class="section4 flex-col"></div>
 
                 <el-dropdown  class="section4-1">
-              <span class="el-dropdown-link">
+              <span class="el-dropdown-link" style="border: solid 5px red;">
                     切换用户<el-icon class="el-icon--right"><arrow-down/></el-icon>
                 </span>
                   <template #dropdown>

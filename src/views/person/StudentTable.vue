@@ -183,9 +183,11 @@ export default defineComponent({
       const res = await studentDelete(studentId)
       if (res.code == 0) {
         message(this, '删除成功')
+        this.doQuery()
       } else {
         message(this, res.msg)
       }
+
     },
     // 进入学生家庭成员页面
     familyMember(studentId: number) {

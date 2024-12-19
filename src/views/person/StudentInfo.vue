@@ -51,7 +51,7 @@
               size="mini"
               type="date"
               style="width: 100%"
-              value-format="yyyy-MM-dd"
+              @change="handleDateChange"
               placeholder="选择出生日期"
             />
           </td>
@@ -112,6 +112,10 @@ export default defineComponent({
     }
   },
   methods: {
+    handleDateChange(value: Date) {
+    const localDate = new Date(value.getTime() - value.getTimezoneOffset() * 60000); // 修正时区偏移
+    this.form.birthday = localDate.toISOString().split('T')[0];
+  },
     //提交表单
     async submit() {
       //      this.form.gender = this.gender.value;

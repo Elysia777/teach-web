@@ -123,6 +123,14 @@ export interface ScoreItem {
   credit: number
   mark: number
 }
+export interface FeeItem {
+  feeId: number
+  studentId: number
+  num: string
+  name: string
+  day: string
+  money:string;
+}
 //用于学生数据信息的定义
 export interface StudentItem {
   studentId: number
@@ -139,6 +147,36 @@ export interface StudentItem {
   email: string
   phone: string
   address: string
+}
+//用于活动数据信息的定义
+export interface ActivityItem {
+  activityId:number
+  activityName:string
+  type:string
+  date:string
+  time:string
+  organizer:string//组织者
+  people:string//活动人数名额
+  remainPeople:string//活动剩余名额
+  activityAddress:string
+  enrollFee:string //活动费用
+}
+//用于学生活动信息定义
+export interface StudentActivityItem {
+  studentActivityId:number
+  studentId:number
+  num:string//学号
+  name:string//学生姓名
+  activityId:number
+  activityName:string
+  type:string
+  date:string
+  time:string
+  organizer:string//组织者
+  people:string//活动人数名额
+  remainPeople:string//活动剩余名额
+  activityAddress:string
+  enrollFee:string //活动费用
 }
 //用于课程数据信息的定义
 export interface CourseItem {

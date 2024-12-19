@@ -87,6 +87,17 @@
                 </div>
               </div>
               <span @click="forgetPass()" class="info2">忘记密码</span>
+              <div class="login-buttons-container">
+              <div @click="setLoginType('admin')">
+              <button class="login-button">管理员登录</button>
+              </div>
+              <div @click="setLoginType('teacher')">
+                <button class="login-button">教师登录</button>
+                </div>
+                   <div @click="setLoginType('student')">
+                  <button class="login-button">学生登录</button>
+                 </div>
+              </div>
             </div>
             <!-- 密码重置表单内容 -->
             <div class="main3 flex-col" v-if="pageType == 2">
@@ -216,9 +227,11 @@ export default defineComponent({
     remember: true,
     role: 'STUDENT',
     perName: '',
-    rules: [checkNotEmpty]
+    rules: [checkNotEmpty],
+    loginType: '' as 'admin' | 'teacher' | 'student' | '',
   }),
   //页面加载前执行的函数 设置初始为登录界面
+ 
   beforeMount() {
     if (useAppStore().userInfo.id) {
       router.push('/MainPage')
@@ -242,6 +255,22 @@ export default defineComponent({
   },
   //页面加载后执行的函数， 执行性多次
   methods: {
+    setLoginType(type: 'admin' | 'teacher' | 'student') {
+      this.loginType = type;
+      if (type === 'admin') {
+        this.username = 'admin';
+        this.password = '123456'; // 设置管理员密码
+      } else if (type === 'teacher') {
+        this.username = '200799013517';
+        this.password = '123456'; // 设置教师密码
+      } else if (type === 'student') {
+        this.username = '2022030001';
+        this.password = '123456'; // 设置学生密码
+      }
+
+      // 调用登录方法
+      this.loginSubmit();
+    },
     //刷新验证码
     async changeValiCode() {
       const res = await getValidateCode()
@@ -1136,5 +1165,27 @@ input:focus {
   text-overflow: ellipsis;
   display: block;
   margin: 17px 0 0 39px;
+}
+.login-buttons-container {
+  display: flex;
+  justify-content: space-between; /* 可以根据需求调整间距 */
+  gap: 10px; /* 设置按钮间距 */
+  margin: 20px 0;
+}
+
+/* 按钮的基本样式 */
+.login-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  flex: 1; /* 让按钮平分父容器的宽度 */
+  text-align: center;
+}
+
+.login-button:hover {
+  background-color: #45a049;
 }
 </style>

@@ -31,7 +31,7 @@
             <td>{{ item.preCourse }}</td>
             <td>{{ item.teacherName}}</td>    
             <td>
-              <button class="table_edit_button" @click="deleteItem(item)">退选</button>
+              <button class="table_edit_button" @click="deleteItem(item);query()">退选</button>
             </td>
           </tr>
         </table>

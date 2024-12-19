@@ -3,7 +3,8 @@ import {
   type DataResponse,
   type StudentItem,
   type FamilyMemberItem,
-  type TeacherItem
+  type TeacherItem,
+  type FeeItem
 } from '@/models/general'
 //获取学生列表分页数据后台数据请求方法
 export async function getStudentPageData(
@@ -16,12 +17,34 @@ export async function getStudentPageData(
   })
   return res as DataResponse
 }
+export async function getFeePageData(
+  numName: String | null,
+  currentPage: number
+): Promise<DataResponse> {
+const res = await generalRequest('/api/fee/getFeePageData', {
+  numName: numName,
+  currentPage: currentPage
+})
+return res as DataResponse
+}
+export async function feeDelete(feeId: number): Promise<DataResponse> {
+  const res = await generalRequest('/api/fee/feeDelete', {
+    feeId: feeId
+  })
+  return res as DataResponse
+}
 //删除学生后台数据请求方法
 export async function studentDelete(studentId: number): Promise<DataResponse> {
   const res = await generalRequest('/api/student/studentDelete', {
     studentId: studentId
   })
   return res as DataResponse
+}
+export async function getFeeInfo(feeId: number): Promise<FeeItem> {
+  const res = await generalRequest('/api/fee/getFeeInfo', {
+    feeId: feeId
+  })
+  return res.data as FeeItem
 }
 //获取学生基本信息后台数据请求方法
 export async function getStudentInfo(studentId: number): Promise<StudentItem> {
@@ -40,6 +63,16 @@ export async function studentEditSave(
     form: form
   })
   return res as DataResponse
+}
+export async function feeEditSave(
+  feeId: number | null,
+  form:FeeItem
+): Promise<DataResponse> {
+const res = await generalRequest('/api/fee/feeEditSave', {
+  feeId: feeId,
+  form: form
+})
+return res as DataResponse
 }
 //获取学生家庭成员列表数据后台数据请求方法
 export async function getFamilyMemberList(studentId: number): Promise<FamilyMemberItem[]> {

@@ -6,8 +6,8 @@
     </div>
 
     <div class="base_query_oneLine">
-      <div class="query_left">
-        <button class="commButton" @click="addItem()">添加</button>
+      <div  class="query_left">
+        <button v-if="!chosenCourseId" class="commButton" @click="addItem()">添加</button>
       </div>
       <div class="query_right">
         <span style="margin-top: 5px">学生</span>
@@ -17,8 +17,8 @@
             {{ item.title }}
           </option>
         </select>
-        <span style="margin-top: 5px">课程</span>
-        <select class="commInput" v-model="courseId">
+        <span v-if="!chosenCourseId" style="margin-top: 5px">课程</span>
+        <select v-if="!chosenCourseId" class="commInput" v-model="courseId">
           <option value="0">请选择...</option>
           <option v-for="item in courseList" :key="item.id" :value="item.id">
             {{ item.title }}
@@ -47,7 +47,7 @@
         >
         <a-button
           v-if="isEdit[record.scoreId]"
-          @click="isEdit[record.scoreId] = false"
+          @click="isEdit[record.scoreId] = false;query()"
           class="table_edit_button"
           >取消</a-button
         >
@@ -76,7 +76,7 @@
         <a-select
           v-model="form.studentId"
           :style="{ width: '320px' }"
-          placeholder="Please select ..."
+          placeholder="请选择学生"
         >
           <a-option v-for="item in studentList" :key="item.id" :value="item.id">
             {{ item.title }}
@@ -87,7 +87,7 @@
         <a-select
           v-model="form.courseId"
           :style="{ width: '320px' }"
-          placeholder="Please select ..."
+          placeholder="请选择课程"
         >
           <a-option v-for="item in courseList" :key="item.id" :value="item.id">
             {{ item.title }}
@@ -100,7 +100,7 @@
           :min="0"
           v-model="form.mark"
           :style="{ width: '320px' }"
-          placeholder="please enter your post..."
+          placeholder="请输入成绩"
         />
       </a-form-item>
     </a-form>
@@ -175,6 +175,7 @@ export default defineComponent({
     }
   },
   methods: {
+ 
 
     // 初始化,获取学生选择项列表和课程选择项列表
     async initialize() {
@@ -244,6 +245,11 @@ export default defineComponent({
       } else {
         message(this, res.msg)
       }
+    }
+  },
+  watch:{
+    chosenCourseId(){
+      this.initialize()
     }
   }
 })

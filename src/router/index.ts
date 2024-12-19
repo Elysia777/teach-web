@@ -36,6 +36,16 @@ const routes = [
     component: () => import('@/views/info/StudentIntroduce.vue')
   },
   {
+    path: '/fee-panel',
+    name: 'FeeTable',
+    component: () => import('@/views/person/FeeTable.vue')
+  },
+  {
+    path: '/FeeInfo',
+    name: 'FeeInfo',
+    component: () => import('@/views/person/FeeInfo.vue')
+  },
+  {
     path: '/TeacherIntroduce',
     name: 'TeacherIntroduce',
     component: () => import('@/views/info/TeacherIntroduce.vue')
@@ -102,6 +112,37 @@ const routes = [
     name: 'MyCourse',
     component: () => import('@/views/teaching/MyCourse.vue')
   },
+  //活动页面
+  {
+    path: '/activity-panel',
+    name: 'ActivityTable',
+    component: () => import('@/views/person/ActivityTable.vue')
+  },
+//活动信息页面
+  {
+    path: '/ActivityInfo',
+    name: 'ActivityInfo',
+    component: () => import('@/views/info/ActivityInfo.vue')
+  },
+  //活动报名页面
+  {
+    path: '/ActivityGo',
+    name: 'ActivityGo',
+    component: () => import('@/views/person/ActivityGo.vue')
+  },
+  //我的活动页面
+  {
+    path: '/MyActivity',
+    name: 'MyActivity',
+    component: () => import('@/views/person/MyActivity.vue')
+  },
+  //管理员修改学生活动页
+  {
+    path: '/StudentActivityTable',
+    name: 'StudentActivityTable',
+    component: () => import('@/views/person/StudentActivityTable.vue')
+  },
+
   {
     path: '/MyTeach',
      name: 'MyTeach',

@@ -5,10 +5,7 @@
         <div class="base_title">课程管理</div>
       </div>
       <div class="test-modal">
-        <a-button @click="handleClick">Open Modal</a-button>
-        <a-modal v-model:visible="visible" @ok="handleOk" @cancel="handleCancel" :footer="false" :fullscreen="true">
-          <student-course></student-course>
-        </a-modal>
+        
       </div>
 
       <div class="base_query_oneLine">

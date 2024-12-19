@@ -7,190 +7,168 @@
 
     <div class="base_query_oneLine">
       <div class="query_left">
-        <button class="commButton" @click="addItem()">添加</button>
+        <button class="commButton" @click="addItem()">添加课程</button>
       </div>
       <div class="query_right">
-        <span style="margin-top: 5px">课程号或课程名</span>
-        <input type="text" v-model="numName" style="margin-left: 10px; width: 230px" />
-        <button style="margin-left: 5px" class="commButton" @click="query()">查询</button>
+        <span class="query_label">课程号或课程名</span>
+        <input type="text" v-model="numName" class="query_input" />
+        <button class="commButton" @click="query()">查询</button>
       </div>
     </div>
-    <div class="table_center" style="margin-top: 5px">
+
+    <div class="table_center">
       <table class="content">
-        <tr class="table_th">
-          <td>课程号</td>
-          <td>课程名</td>
-          <td>学分</td>
-          <td>材料路径</td>
-          <td>前序课</td>
-          <td>任课老师</td>
-          <td>操作</td>
-        </tr>
-        <tr v-for="item in courseList" :key="item.courseId">
-          <td>{{ item.num }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.credit }}</td>
-          <td>{{ item.coursePath }}</td>
-          <td>{{ item.preCourse }}</td>
-          <td>{{ item.teacherName}}</td>    
-          <td>
-            <button class="table_edit_button" @click="editItem(item)">编辑</button>
-            <button class="table_delete_button" @click="deleteItem(item.courseId)">删除</button>
-          </td>
-        </tr>
+        <thead>
+          <tr class="table_th">
+            <th>课程号</th>
+            <th>课程名</th>
+            <th>学分</th>
+            <th>材料路径</th>
+            <th>前序课</th>
+            <th>任课老师</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in courseList" :key="item.courseId">
+            <td>{{ item.num }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.credit }}</td>
+            <td>{{ item.coursePath }}</td>
+            <td>{{ item.preCourse }}</td>
+            <td>{{ item.teacherName}}</td>
+            <td>
+              <button class="table_edit_button" @click="editItem(item)">编辑</button>
+              <button class="table_delete_button" @click="deleteItem(item.courseId)">删除</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
-  <!-- 对话框显示 -->
-  <dialog
-    id="favDialog"
-    onclose="close()"
-    style="position: absolute; top: 300px; left: 300px; width: 300px; height: 310px"
-  >
-    <div class="base_title">课程添加修改对话框</div>
-    <div class="dialog-div" style="margin-top: 5px">
-      <table class="content">
-        <tr>
-          <td colspan="1" style="text-align: right">课程号</td>
-          <td colspan="1"><input v-model="form.num" style="width: 97%" /></td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">课程名</td>
-          <td colspan="1"><input v-model="form.name" style="width: 97%" /></td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">学分</td>
-          <td colspan="1">
-            <input v-model="form.credit" style="width: 97%" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">资料路径</td>
-          <td colspan="1">
-            <input v-model="form.coursePath" style="width: 97%" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">前序课</td>
-          <td colspan="1">
-            <select class="commInput" v-model="form.preCourseId">
-              <option v-for="item in courseSelectList" :key="item.id" :value="item.id">
-                {{ item.title }}
-              </option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="1" style="text-align: right">任课老师</td>
-          <td colspan="1">
-            <select class="commInput" v-model="form.teacherId">
-              <option v-for="item in teacherSelectList" :key="item.id" :value="item.id">
-                {{ item.title }}
-              </option>
-            </select>
-          </td>
-        </tr>
 
+  <!-- 课程添加/修改对话框 -->
+  <dialog id="favDialog" class="dialog" onclose="close()">
+  <div class="dialog-header">
+    <div class="base_title">课程添加修改</div>
+  </div>
+  <div class="dialog-body">
+    <table class="content">
+      <tr>
+        <td class="form-label">课程号</td>
+        <td><input v-model="form.num" class="form-input" /></td>
+      </tr>
+      <tr>
+        <td class="form-label">课程名</td>
+        <td><input v-model="form.name" class="form-input" /></td>
+      </tr>
+      <tr>
+        <td class="form-label">学分</td>
+        <td><input v-model="form.credit" class="form-input" /></td>
+      </tr>
+      <tr>
+        <td class="form-label">资料路径</td>
+        <td><input v-model="form.coursePath" class="form-input" /></td>
+      </tr>
+      <tr>
+        <td class="form-label">前序课</td>
+        <td>
+          <select v-model="form.preCourseId" class="form-select">
+            <option v-for="item in courseSelectList" :key="item.id" :value="item.id">
+              {{ item.title }}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="form-label">任课老师</td>
+        <td>
+          <select v-model="form.teacherId" class="form-select">
+            <option v-for="item in teacherSelectList" :key="item.id" :value="item.id">
+              {{ item.title }}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="dialog-footer">
+          <button class="commButton" @click="close()">取消</button>
+          <button class="commButton" @click="confirm()">确认</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</dialog>
 
-        <tr>
-          <td colspan="2">
-            <button class="commButton" @click="close()" style="margin-right: 30px">取消</button>
-            <button class="commButton" @click="confirm()">确认</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </dialog>
 </template>
 
 <script lang="ts">
-import { type CourseItem, type OptionItem ,type TeacherItem} from '@/models/general'
 import { defineComponent } from 'vue'
 import { getCourseList, courseDelete, courseSave } from '@/services/teachingServ'
 import { message, messageConform } from '@/tools/messageBox'
 import { getTeacherList } from '@/services/personServ'
 import { getDialog } from '@/tools/comMethod'
+import { type CourseItem, type OptionItem, type TeacherItem } from '@/models/general'
+
 export default defineComponent({
-  // 双向绑定数据
   data: () => ({
     numName: '',
     courseList: [] as CourseItem[],
-    teacherList:[] as TeacherItem[],
+    teacherList: [] as TeacherItem[],
     courseSelectList: [] as OptionItem[],
     teacherSelectList: [] as OptionItem[],
-    deleteId: -1,
     form: {} as CourseItem
   }),
-  //初始加载一次,直接获取教师列表
   created() {
     this.query()
-    console.log(this.teacherList)
   },
-
   methods: {
-    //设置课程选择列表
     makeSelectCourseList() {
-      this.courseSelectList = []
-      for (let i = 0; i < this.courseList.length; i++) {
-        const item = this.courseList[i]
-        this.courseSelectList.push({
-          id: item.courseId,
-          value: item.num,
-          title: item.num + '-' + item.name
-        })
-      }
+      this.courseSelectList = this.courseList.map(item => ({
+        id: item.courseId,
+        value: item.num,
+        title: `${item.num} - ${item.name}`
+      }))
     },
     makeSelectTeacherList() {
-      this.teacherSelectList = []
-      for (let i = 0; i < this.teacherList.length; i++) {
-        const item = this.teacherList[i]
-        this.teacherSelectList.push({
-          id: item.teacherId,
-          value: item.num,
-          title: item.num + '-' + item.name
-        })
-      }
+      this.teacherSelectList = this.teacherList.map(item => ({
+        id: item.teacherId,
+        value: item.num,
+        title: `${item.num} - ${item.name}`
+      }))
     },
-    //查询课程列表
     async query() {
       this.courseList = await getCourseList(this.numName)
-      this.teacherList=await getTeacherList(this.numName)
+      this.teacherList = await getTeacherList(this.numName)
       this.makeSelectCourseList()
       this.makeSelectTeacherList()
     },
-    //添加课程,显示对话框
     addItem() {
       this.form = {} as CourseItem
       getDialog('favDialog').show()
     },
-    //编辑课程,显示对话框
     editItem(item: CourseItem) {
       this.form = item
       getDialog('favDialog').show()
     },
-    //关闭对话框
     close() {
       getDialog('favDialog').close()
     },
-    //确认对话框
     async confirm() {
       this.close()
       const res = await courseSave(this.form)
-      if (res.code == 0) {
+      if (res.code === 0) {
         message(this, '保存成功')
         this.query()
       } else {
         message(this, res.msg)
       }
     },
-    //删除课程
     async deleteItem(courseId: number) {
       const result = await messageConform('确认删除吗?')
-      if (!result) {
-        return
-      }
+      if (!result) return
       const res = await courseDelete(courseId)
-      if (res.code == 0) {
+      if (res.code === 0) {
         message(this, '删除成功')
         this.query()
       } else {
@@ -200,4 +178,151 @@ export default defineComponent({
   }
 })
 </script>
-<style></style>
+
+<style scoped>
+.base_form {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.base_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.blue_column {
+  width: 6px;
+  height: 40px;
+  background-color: #007bff;
+  margin-right: 10px;
+}
+
+.base_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.base_query_oneLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.query_left button,
+.query_right button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.query_left button:hover,
+.query_right button:hover {
+  background-color: #0056b3;
+}
+
+.query_label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.query_input {
+  padding: 8px;
+  width: 230px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.table_center {
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.content {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table_th th {
+  padding: 12px;
+  text-align: left;
+  background-color: #007bff;
+  color: white;
+}
+
+.content td {
+  padding: 10px;
+  text-align: left
+}
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 460px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000; /* 确保对话框在最上层 */
+}
+
+.dialog-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dialog-body {
+  margin-bottom: 20px;
+}
+
+.dialog-footer {
+  justify-content: space-between;
+}
+
+.form-label {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.form-input{
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.commButton {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin: auto 50px;
+}
+
+.commButton:hover {
+  background-color: #0056b3;
+}</style>

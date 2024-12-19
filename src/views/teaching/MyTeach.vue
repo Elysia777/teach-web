@@ -12,12 +12,12 @@
       </div>
     </div>
     <a-table :columns="columns" :data="courseList">
-      <template #view="{}">
-        <a-button @click="visible = true"> 查看 </a-button>
+      <template #view="{record}">
+        <a-button @click="checkScoreTable(record.courseId)"> 查看 </a-button>
       </template>
     </a-table>
     <a-modal v-model:visible="visible" @ok="handleOk" @cancel="handleCancel" :fullscreen="true">
-      <score-table :chosen-course-id="4"></score-table>
+      <score-table :chosen-course-id="courseId as number"></score-table>
     </a-modal>
   </div>
 </template>
@@ -28,6 +28,7 @@ import { defineComponent } from 'vue'
 import { getTeacherCourseList } from '@/services/teachingServ'
 import { useAppStore } from '@/stores/app'
 import ScoreTable from '@/views/teaching/ScoreTable.vue'
+import { number } from 'echarts'
 export default defineComponent({
   components: { ScoreTable },
 
@@ -63,7 +64,8 @@ export default defineComponent({
     teacherList: [] as TeacherItem[],
     deleteId: -1,
     form: {} as CourseItem,
-    visible: false
+    visible: false,
+    courseId:0 as Number
   }),
   //初始加载一次,直接获取教师列表
   created() {
@@ -76,6 +78,11 @@ export default defineComponent({
 
     handleClick(){
       this.visible = true;
+    },
+    checkScoreTable(recordID:Number){
+      this.visible=true;
+      this.courseId=recordID;
+      console.log(recordID);
     },
      handleOk(){
       this.visible = false;
